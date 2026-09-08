@@ -1,6 +1,6 @@
 {
-  "name": "Confidency POS & Inventory",
-  "description": "Nigerian supermarket POS and inventory system featuring groceries and toiletries, real-time barcode scanning, cash drawer tracking, and admin product management.",
+  "name": "Shelf POS & Inventory",
+  "description": "Shelf supermarket POS and inventory system featuring groceries and toiletries, real-time barcode scanning, cash drawer tracking, and admin product management.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

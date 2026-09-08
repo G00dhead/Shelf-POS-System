@@ -261,8 +261,8 @@ export const OrderQueueScreen: React.FC = () => {
                 </div>
 
                 {/* Items Thumbnails Row */}
-                <div className="flex items-center justify-between gap-4 pt-1">
-                  <div className="flex items-center gap-2 overflow-x-auto py-1">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 border-t border-zinc-100">
+                  <div className="flex items-center gap-2 overflow-x-auto py-1 no-scrollbar">
                     {order.items.map((item, idx) => (
                       <div
                         key={idx}
@@ -290,12 +290,12 @@ export const OrderQueueScreen: React.FC = () => {
                   </div>
 
                   {/* Order Total & Actions */}
-                  <div className="flex items-center gap-3 shrink-0">
-                    <div className="text-right">
-                      <div className="text-xs text-zinc-400 capitalize">
-                        {order.paymentMethod} Payment
+                  <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-zinc-100">
+                    <div className="text-left sm:text-right">
+                      <div className="text-[10px] sm:text-xs text-zinc-400 capitalize">
+                        {order.paymentMethod} • {totalItemsCount} {totalItemsCount === 1 ? 'item' : 'items'}
                       </div>
-                      <div className="text-base font-bold font-mono text-zinc-900">
+                      <div className="text-sm sm:text-base font-bold font-mono text-zinc-900 leading-tight">
                         {formatMoney(order.total, settings.currency)}
                       </div>
                     </div>
@@ -304,10 +304,10 @@ export const OrderQueueScreen: React.FC = () => {
                       {order.status === 'held' && (
                         <button
                           onClick={() => resumeOrder(order.id)}
-                          className="px-3 py-1.5 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
+                          className="min-h-[38px] px-3.5 py-1.5 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
                           title="Resume this sale in POS"
                         >
-                          <Play className="w-3 h-3 fill-current" />
+                          <Play className="w-3.5 h-3.5 fill-current" />
                           <span>Resume Sale</span>
                         </button>
                       )}
@@ -315,20 +315,21 @@ export const OrderQueueScreen: React.FC = () => {
                       {order.status === 'completed' && (
                         <button
                           onClick={() => refundOrder(order.id)}
-                          className="px-2.5 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 border border-red-200 rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
+                          className="min-h-[38px] px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 border border-red-200 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
                           title="Refund this transaction"
                         >
-                          <RotateCcw className="w-3 h-3" />
+                          <RotateCcw className="w-3.5 h-3.5" />
                           <span>Refund</span>
                         </button>
                       )}
 
                       <button
                         onClick={() => setSelectedOrderForModal(order)}
-                        className="p-1.5 text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg border border-zinc-200 transition-colors cursor-pointer"
+                        className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg border border-zinc-200 transition-colors cursor-pointer"
                         title="View Full Thermal Receipt"
+                        aria-label="View Full Thermal Receipt"
                       >
-                        <Eye className="w-3.5 h-3.5" />
+                        <Eye className="w-4 h-4" />
                       </button>
                     </div>
                   </div>

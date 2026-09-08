@@ -98,14 +98,14 @@ export const Sidebar: React.FC = () => {
             onClick={() => handleSelectScreen('pos')}
           >
             <div className="w-8 h-8 rounded-lg bg-[#6D5AE6] flex items-center justify-center text-white font-bold text-sm shadow-sm">
-              C
+              S
             </div>
             <div>
               <div className="font-semibold text-zinc-900 text-sm tracking-tight leading-none group-hover:text-[#6D5AE6] transition-colors">
-                Confidency OS
+                Shelf POS
               </div>
               <div className="text-[11px] text-zinc-400 font-normal leading-tight mt-0.5">
-                Business Operations Platform
+                Supermarket & Inventory OS
               </div>
             </div>
           </div>

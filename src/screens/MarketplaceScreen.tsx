@@ -136,7 +136,7 @@ export const MarketplaceScreen: React.FC = () => {
                 <input
                   type="text"
                   readOnly
-                  value={`https://api.confidency.store/v1/integrations/${selectedConfig.id}`}
+                  value={`https://api.shelf.ng/v1/integrations/${selectedConfig.id}`}
                   className="w-full px-3 py-2 border border-zinc-200 rounded-lg font-mono text-zinc-600 bg-zinc-50"
                 />
               </div>

@@ -126,7 +126,7 @@ export const BarcodeLabelModal: React.FC<BarcodeLabelProps> = ({
         {/* Realistic Retail Shelf Tag */}
         <div className="border-2 border-dashed border-zinc-300 rounded-xl p-4 bg-zinc-50 flex flex-col items-center text-center space-y-2">
           <div className="text-[10px] font-bold text-[#6D5AE6] uppercase tracking-widest">
-            De-Prince Supermarket
+            Shelf
           </div>
           <div className="text-xs font-bold text-zinc-900 line-clamp-2">
             {name}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { CheckCircle2, Printer, Mail, X, ShoppingBag } from 'lucide-react';
+import React, { useState } from 'react';
+import { CheckCircle2, Printer, Mail, X, ShoppingBag, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { Order } from '../types';
 import { formatMoney } from '../utils/format';
@@ -10,6 +10,12 @@ export const ReceiptModal: React.FC<{ order: Order; onClose: () => void }> = ({
   onClose
 }) => {
   const { settings } = useApp();
+  const [emailSent, setEmailSent] = useState(false);
+
+  const handleSendEmail = () => {
+    setEmailSent(true);
+    setTimeout(() => setEmailSent(false), 3000);
+  };
 
   return (
     <div
@@ -133,11 +139,25 @@ export const ReceiptModal: React.FC<{ order: Order; onClose: () => void }> = ({
             <span>Print</span>
           </button>
           <button
-            onClick={() => alert(`Receipt dispatched via SMS & Email to customer!`)}
-            className="flex items-center justify-center gap-1.5 py-2 px-2 text-xs font-medium text-zinc-700 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-100 transition-colors cursor-pointer"
+            onClick={handleSendEmail}
+            disabled={emailSent}
+            className={`flex items-center justify-center gap-1.5 py-2 px-2 text-xs font-medium border rounded-lg transition-colors cursor-pointer ${
+              emailSent
+                ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                : 'text-zinc-700 bg-white border-zinc-200 hover:bg-zinc-100'
+            }`}
           >
-            <Mail className="w-3.5 h-3.5" />
-            <span>Email</span>
+            {emailSent ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Sent!</span>
+              </>
+            ) : (
+              <>
+                <Mail className="w-3.5 h-3.5" />
+                <span>Email</span>
+              </>
+            )}
           </button>
           <button
             onClick={onClose}

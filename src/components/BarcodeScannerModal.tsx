@@ -20,6 +20,7 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
   const [cameraActive, setCameraActive] = useState(false);
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [manualCode, setManualCode] = useState('');
+  const [scanError, setScanError] = useState<string | null>(null);
   const [lastScanned, setLastScanned] = useState<{ name: string; barcode: string; time: string } | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -28,6 +29,7 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
     if (!isOpen) {
       stopCamera();
       setManualCode('');
+      setScanError(null);
       setCameraError(null);
       return;
     }
@@ -76,6 +78,7 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
     const trimmed = codeToScan.trim();
     if (!trimmed) return;
 
+    setScanError(null);
     const matched = onScan(trimmed);
     if (matched) {
       playBarcodeScanBeep();
@@ -90,7 +93,7 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
       setManualCode('');
     } else {
       playScanErrorBeep();
-      alert(`Barcode "${trimmed}" not found in supermarket database.`);
+      setScanError(`Barcode "${trimmed}" not found in supermarket inventory.`);
     }
   };
 
@@ -167,6 +170,23 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
               <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-emerald-400" />
             </div>
           </div>
+
+          {/* Scan Error Banner */}
+          {scanError && (
+            <div className="p-3 bg-red-50 border border-red-200 rounded-xl flex items-center justify-between text-xs text-red-900 animate-in fade-in slide-in-from-top-2">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+                <span className="font-medium">{scanError}</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setScanError(null)}
+                className="text-red-400 hover:text-red-700 p-0.5 rounded cursor-pointer"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          )}
 
           {/* Last Scanned Feedback Pill */}
           {lastScanned && (

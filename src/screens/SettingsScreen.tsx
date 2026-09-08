@@ -140,14 +140,6 @@ export const SettingsScreen: React.FC = () => {
             Admin product catalog management, Nigerian business profile, FIRS VAT rates, and cash drawer
           </p>
         </div>
-
-        <button
-          onClick={handleOpenAddProduct}
-          className="px-3.5 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
-        >
-          <Plus className="w-4 h-4" />
-          <span>Add New Product (Admin)</span>
-        </button>
       </div>
 
       {savedNotification && (

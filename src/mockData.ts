@@ -12,8 +12,38 @@ import {
   CartItem
 } from './types';
 
-export const DEFAULT_PRODUCT_IMAGE =
-  'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&auto=format&fit=crop&q=80';
+// Authentic retail product photography assets
+import goldenPennySemoImg from './assets/images/golden_penny_semo_1788855525454.jpg';
+import indomieNoodlesImg from './assets/images/indomie_noodles_pack_1788855541912.jpg';
+import peakMilkImg from './assets/images/peak_milk_pack_1788855559780.jpg';
+import mamadorOilImg from './assets/images/mamador_cooking_oil_1788855667954.jpg';
+import dangoteSugarImg from './assets/images/dangote_refined_sugar_1788855095738.jpg';
+import miloMaltImg from './assets/images/milo_chocolate_pack_1788855573723.jpg';
+import ginoTomatoPasteImg from './assets/images/gino_tomato_paste_1788855685144.jpg';
+import titusSardinesImg from './assets/images/titus_sardines_tin_1788855640413.jpg';
+
+import dettolSoapImg from './assets/images/dettol_cool_soap_1788855590633.jpg';
+import oralBToothpasteImg from './assets/images/oral_b_toothpaste_1788855774161.jpg';
+import alwaysPadsImg from './assets/images/always_ultra_pads_1788855790340.jpg';
+import niveaLotionImg from './assets/images/nivea_cocoa_lotion_1788855805693.jpg';
+import closeupToothpasteImg from './assets/images/closeup_gel_toothpaste_1788855820495.jpg';
+import bellaTissuesImg from './assets/images/bella_facial_tissues_1788855842563.jpg';
+
+import morningFreshImg from './assets/images/morning_fresh_liquid_1788855609078.jpg';
+import arielDetergentImg from './assets/images/ariel_detergent_bag_1788855700594.jpg';
+import harpicGelImg from './assets/images/harpic_toilet_gel_1788855858599.jpg';
+
+import maltinaDrinkImg from './assets/images/maltina_can_drink_1788855627111.jpg';
+import chiExoticJuiceImg from './assets/images/chi_exotic_juice_1788855713884.jpg';
+import evaWaterImg from './assets/images/eva_water_bottles_1788855875149.jpg';
+
+import sweetBreadImg from './assets/images/fresh_sweet_bread_1788855889171.jpg';
+import minimieChinchinImg from './assets/images/minimie_chinchin_jar_1788855732319.jpg';
+import plantainChipsImg from './assets/images/plantain_chips_pack_1788855748784.jpg';
+
+import crateEggsImg from './assets/images/crate_of_eggs_1788855906616.jpg';
+
+export const DEFAULT_PRODUCT_IMAGE = goldenPennySemoImg;
 
 export const INITIAL_PRODUCTS: Product[] = [
   // --- GROCERIES ---
@@ -27,7 +57,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 3100,
     stock: 65,
     unit: '2kg Bag',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=80',
+    image: goldenPennySemoImg,
     description: 'High quality premium wheat flour semovita, rich in fiber and proteins. Staple swallow.',
     rating: 4.9,
     reviewsCount: 142,
@@ -43,7 +73,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 10800,
     stock: 45,
     unit: 'Carton (40)',
-    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?w=600&auto=format&fit=crop&q=80',
+    image: indomieNoodlesImg,
     description: 'Original Onion Chicken instant noodles full carton. Family size favourite across Nigeria.',
     rating: 4.9,
     reviewsCount: 310,
@@ -59,7 +89,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 4200,
     stock: 80,
     unit: 'Pack of 6',
-    image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&auto=format&fit=crop&q=80',
+    image: peakMilkImg,
     description: 'Rich, creamy evaporated full cream milk tin pack, enriched with 28 vitamins and minerals.',
     rating: 4.8,
     reviewsCount: 95,
@@ -75,7 +105,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 9500,
     stock: 32,
     unit: '3.5L Jerrycan',
-    image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&auto=format&fit=crop&q=80',
+    image: mamadorOilImg,
     description: 'Cholesterol-free pure vegetable oil fortified with Vitamin A. Heart-friendly cooking oil.',
     rating: 4.7,
     reviewsCount: 68,
@@ -91,7 +121,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 1550,
     stock: 120,
     unit: '1kg Pack',
-    image: 'https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=600&auto=format&fit=crop&q=80',
+    image: dangoteSugarImg,
     description: 'Premium granulated refined white cane sugar, fortified with Vitamin A.',
     rating: 4.8,
     reviewsCount: 54,
@@ -107,7 +137,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 3850,
     stock: 58,
     unit: '800g Pouch',
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop&q=80',
+    image: miloMaltImg,
     description: 'The energy food drink of future champions. Activ-Go chocolate malt powder refill.',
     rating: 4.9,
     reviewsCount: 180,
@@ -123,7 +153,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 1650,
     stock: 90,
     unit: 'Pack of 5',
-    image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&auto=format&fit=crop&q=80',
+    image: ginoTomatoPasteImg,
     description: 'Thick triple-concentrated tomato paste spiced with Nigerian pepper and fresh onions for stew.',
     rating: 4.7,
     reviewsCount: 82,
@@ -139,7 +169,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 900,
     stock: 140,
     unit: '125g Tin',
-    image: 'https://images.unsplash.com/photo-1534482421-64566f976cfa?w=600&auto=format&fit=crop&q=80',
+    image: titusSardinesImg,
     description: 'Classic Portuguese wild-caught canned sardines in pure soybean oil with Omega-3.',
     rating: 4.9,
     reviewsCount: 210,
@@ -157,7 +187,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 1850,
     stock: 75,
     unit: 'Pack of 3',
-    image: 'https://images.unsplash.com/photo-1607006483702-326402377484?w=600&auto=format&fit=crop&q=80',
+    image: dettolSoapImg,
     description: 'Dettol Cool bar soap with refreshing menthol and trusted germ protection for all the family.',
     rating: 4.8,
     reviewsCount: 115,
@@ -173,7 +203,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 950,
     stock: 110,
     unit: '140g Tube',
-    image: 'https://images.unsplash.com/photo-1559591937-e1032b4b455b?w=600&auto=format&fit=crop&q=80',
+    image: oralBToothpasteImg,
     description: 'Triple action cavity defense, fresh breath mint, and enamel strengthening toothpaste.',
     rating: 4.8,
     reviewsCount: 76,
@@ -189,7 +219,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 1400,
     stock: 85,
     unit: '14 Pads Pack',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80',
+    image: alwaysPadsImg,
     description: 'Superior leakguard core with wings. All-day clean and dry comfort for women.',
     rating: 4.9,
     reviewsCount: 160,
@@ -205,7 +235,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 3750,
     stock: 38,
     unit: '400ml Bottle',
-    image: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600&auto=format&fit=crop&q=80',
+    image: niveaLotionImg,
     description: 'Deep moisture serum infused with natural cocoa butter and Vitamin E for 48h glowing skin.',
     rating: 4.9,
     reviewsCount: 94,
@@ -221,7 +251,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 820,
     stock: 95,
     unit: '140g Tube',
-    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&auto=format&fit=crop&q=80',
+    image: closeupToothpasteImg,
     description: 'Spicy clove extract gel with antibacterial zinc mouthwash formula for 12-hour fresh breath.',
     rating: 4.7,
     reviewsCount: 88,
@@ -237,7 +267,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 980,
     stock: 70,
     unit: '200 Sheet Box',
-    image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=600&auto=format&fit=crop&q=80',
+    image: bellaTissuesImg,
     description: 'Gentle, virgin wood pulp absorbent 2-ply facial tissues in decorative dispenser box.',
     rating: 4.6,
     reviewsCount: 42,
@@ -255,7 +285,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 2150,
     stock: 52,
     unit: '1 Litre Bottle',
-    image: 'https://images.unsplash.com/photo-1585670270608-b4b455b5d194?w=600&auto=format&fit=crop&q=80',
+    image: morningFreshImg,
     description: 'Superior grease-cutting power, just one drop cleans sink full of plates. Lemon fresh scent.',
     rating: 4.9,
     reviewsCount: 135,
@@ -271,7 +301,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 3950,
     stock: 36,
     unit: '2kg Bag',
-    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=600&auto=format&fit=crop&q=80',
+    image: arielDetergentImg,
     description: 'Tough stain removal in 1 wash with downy freshness. Safe on colors and whites.',
     rating: 4.8,
     reviewsCount: 110,
@@ -287,7 +317,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 1680,
     stock: 64,
     unit: '750ml Bottle',
-    image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&auto=format&fit=crop&q=80',
+    image: harpicGelImg,
     description: 'Kills 99.9% of germs, limescale remover, and deep bowl disinfection formula.',
     rating: 4.8,
     reviewsCount: 52,
@@ -305,7 +335,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 3100,
     stock: 48,
     unit: 'Pack of 6 Cans',
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&auto=format&fit=crop&q=80',
+    image: maltinaDrinkImg,
     description: 'Smooth nourishing premium malt drink with natural vitamins and minerals.',
     rating: 4.9,
     reviewsCount: 220,
@@ -321,7 +351,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 1350,
     stock: 75,
     unit: '1 Litre TetraPak',
-    image: 'https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?w=600&auto=format&fit=crop&q=80',
+    image: chiExoticJuiceImg,
     description: 'Refreshing blend of ripe tropical pineapples and rich creamy coconut juice nectar.',
     rating: 4.8,
     reviewsCount: 140,
@@ -337,7 +367,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 2100,
     stock: 90,
     unit: 'Pack of 12',
-    image: 'https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=600&auto=format&fit=crop&q=80',
+    image: evaWaterImg,
     description: 'Crisp, refreshing pure natural mineral spring water bottled at source under strict hygiene.',
     rating: 4.9,
     reviewsCount: 88,
@@ -355,7 +385,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 1100,
     stock: 40,
     unit: 'Jumbo Loaf',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80',
+    image: sweetBreadImg,
     description: 'Soft, fluffy bakery oven-fresh sweet butter bread. Best paired with hot tea or fried eggs.',
     rating: 4.9,
     reviewsCount: 195,
@@ -371,7 +401,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 2450,
     stock: 35,
     unit: '900g Jar',
-    image: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=600&auto=format&fit=crop&q=80',
+    image: minimieChinchinImg,
     description: 'Taste the fun! Nutmeg-spiced golden crisp pastry bites in airtight reusable canister.',
     rating: 4.8,
     reviewsCount: 112,
@@ -387,7 +417,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 650,
     stock: 80,
     unit: '150g Pack',
-    image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&auto=format&fit=crop&q=80',
+    image: plantainChipsImg,
     description: 'Crunchy golden thinly sliced sweet plantain chips seasoned with sea salt and chili pepper.',
     rating: 4.7,
     reviewsCount: 84,
@@ -405,7 +435,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     cost: 4300,
     stock: 28,
     unit: 'Crate (30)',
-    image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&auto=format&fit=crop&q=80',
+    image: crateEggsImg,
     description: 'Grade A fresh large brown eggs directly sourced from Ogun State poultry farms.',
     rating: 4.9,
     reviewsCount: 146,

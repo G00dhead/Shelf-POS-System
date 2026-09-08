@@ -3,6 +3,12 @@ import { X, PackagePlus, Plus, Minus, Tag, DollarSign, ShoppingBag } from 'lucid
 import { Category } from '../types';
 import { formatMoney } from '../utils/format';
 import { DEFAULT_PRODUCT_IMAGE } from '../mockData';
+import goldenPennySemoImg from '../assets/images/golden_penny_semo_1788855525454.jpg';
+import sweetBreadImg from '../assets/images/fresh_sweet_bread_1788855889171.jpg';
+import maltinaDrinkImg from '../assets/images/maltina_can_drink_1788855627111.jpg';
+import crateEggsImg from '../assets/images/crate_of_eggs_1788855906616.jpg';
+import morningFreshImg from '../assets/images/morning_fresh_liquid_1788855609078.jpg';
+import dettolSoapImg from '../assets/images/dettol_cool_soap_1788855590633.jpg';
 
 interface QuickSaleModalProps {
   isOpen: boolean;
@@ -18,12 +24,12 @@ interface QuickSaleModalProps {
 }
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  Groceries: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&auto=format&fit=crop&q=80',
-  'Bakery & Snacks': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80',
-  'Drinks & Beverages': 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop&q=80',
-  'Fresh & Frozen': 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
-  'Household & Cleaning': 'https://images.unsplash.com/photo-1585670270608-b4b455b5d194?w=600&auto=format&fit=crop&q=80',
-  'Toiletries & Personal Care': 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&auto=format&fit=crop&q=80'
+  Groceries: goldenPennySemoImg,
+  'Bakery & Snacks': sweetBreadImg,
+  'Drinks & Beverages': maltinaDrinkImg,
+  'Fresh & Frozen': crateEggsImg,
+  'Household & Cleaning': morningFreshImg,
+  'Toiletries & Personal Care': dettolSoapImg
 };
 
 const AVAILABLE_CATEGORIES: Category[] = [

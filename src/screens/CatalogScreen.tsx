@@ -69,9 +69,7 @@ export const CatalogScreen: React.FC = () => {
   const [price, setPrice] = useState('3500');
   const [cost, setCost] = useState('2800');
   const [stock, setStock] = useState('50');
-  const [image, setImage] = useState(
-    'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=80'
-  );
+  const [image, setImage] = useState(DEFAULT_PRODUCT_IMAGE);
   const [description, setDescription] = useState('');
 
   const filteredProducts = useMemo(() => {
@@ -96,7 +94,7 @@ export const CatalogScreen: React.FC = () => {
     setPrice('3500');
     setCost('2700');
     setStock('40');
-    setImage('https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=80');
+    setImage(DEFAULT_PRODUCT_IMAGE);
     setDescription('');
     setIsAddModalOpen(true);
   };

@@ -18,6 +18,7 @@ import { useApp } from '../context/AppContext';
 import { StaffMember, Product, Category } from '../types';
 import { formatMoney } from '../utils/format';
 import { BarcodeLabelModal } from '../components/BarcodeView';
+import { DEFAULT_PRODUCT_IMAGE } from '../mockData';
 
 export const SettingsScreen: React.FC = () => {
   const {
@@ -56,9 +57,7 @@ export const SettingsScreen: React.FC = () => {
   const [newProdPrice, setNewProdPrice] = useState('2500');
   const [newProdCost, setNewProdCost] = useState('1900');
   const [newProdStock, setNewProdStock] = useState('30');
-  const [newProdImage, setNewProdImage] = useState(
-    'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=80'
-  );
+  const [newProdImage, setNewProdImage] = useState(DEFAULT_PRODUCT_IMAGE);
 
   const handleOpenAddProduct = () => {
     setNewProdName('');

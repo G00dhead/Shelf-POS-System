@@ -804,10 +804,10 @@ export const INITIAL_INTEGRATIONS: Integration[] = [
 export const INITIAL_STAFF: StaffMember[] = [
   {
     id: 'st-1',
-    name: 'Chidinma O.',
-    email: 'chidinma.o@shelf.ng',
+    name: 'Goodhead Golly',
+    email: 'goodheadgolly@gmail.com',
     role: 'Head Cashier',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    avatar: '',
     active: true,
     shift: 'Morning Shift (8:00 AM - 4:00 PM)',
     totalTransactionsToday: 24
@@ -817,7 +817,7 @@ export const INITIAL_STAFF: StaffMember[] = [
     name: 'Babajide A.',
     email: 'babajide.a@shelf.ng',
     role: 'Store Manager',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    avatar: '',
     active: true,
     shift: 'Full Day (Store Operations)',
     totalTransactionsToday: 8
@@ -827,7 +827,7 @@ export const INITIAL_STAFF: StaffMember[] = [
     name: 'Emeka N.',
     email: 'emeka.n@shelf.ng',
     role: 'Cashier',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    avatar: '',
     active: false,
     shift: 'Evening Shift (3:30 PM - 10:00 PM)',
     totalTransactionsToday: 0
@@ -837,7 +837,7 @@ export const INITIAL_STAFF: StaffMember[] = [
     name: 'Fatima B.',
     email: 'fatima.b@shelf.ng',
     role: 'Inventory Lead',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    avatar: '',
     active: true,
     shift: 'Receiving & Barcoding (7:00 AM - 3:00 PM)',
     totalTransactionsToday: 0
@@ -852,7 +852,7 @@ export const INITIAL_SETTINGS: StoreSettings = {
   defaultTaxRate: 7.5,
   startingDrawerFloat: 50000.00,
   drawerCurrentAmount: 50000.00,
-  cashierName: 'Chidinma O.',
+  cashierName: 'Goodhead Golly',
   shiftStartTime: '8:30 AM',
   receiptHeader: 'SHELF SUPERMARKET & PROVISIONS\nPlot 14, Admiralty Way, Lekki Phase 1, Lagos\nTel: +234 803 123 4567 • FIRS TIN: 10482910-0001',
   receiptFooter: 'Thank you for shopping at Shelf!\nReturns in original condition accepted within 48 hours with receipt.',

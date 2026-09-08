@@ -6,6 +6,7 @@ import { CartPanel } from './components/CartPanel';
 import { ReceiptModal } from './components/ReceiptModal';
 import { EndShiftModal } from './components/EndShiftModal';
 import { MobileCartDrawer } from './components/MobileCartDrawer';
+import { ManualPaymentModal } from './components/ManualPaymentModal';
 
 // Screens
 import { PosScreen } from './screens/PosScreen';
@@ -84,7 +85,7 @@ const MainAppLayout: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
           />
           <div className="relative z-10 w-[260px] h-full bg-white shadow-2xl animate-in slide-in-from-left duration-200">
-            <Sidebar />
+            <Sidebar forceExpanded />
           </div>
         </div>
       )}
@@ -121,6 +122,7 @@ const MainAppLayout: React.FC = () => {
 
       <EndShiftModal />
       <MobileCartDrawer />
+      <ManualPaymentModal />
     </div>
   );
 };

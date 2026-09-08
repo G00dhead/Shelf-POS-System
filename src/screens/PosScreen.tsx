@@ -7,7 +7,8 @@ import {
   Barcode as BarcodeIcon,
   CheckCircle2,
   X,
-  PackagePlus
+  PackagePlus,
+  Calculator
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { Category, Product } from '../types';
@@ -38,7 +39,8 @@ export const PosScreen: React.FC = () => {
     setMobileCartOpen,
     total,
     settings,
-    scanBarcode
+    scanBarcode,
+    setIsManualPaymentOpen
   } = useApp();
 
   // Unified single search & barcode state
@@ -264,6 +266,18 @@ export const PosScreen: React.FC = () => {
             </button>
           )}
         </form>
+
+        {/* Manual Payment Keypad Trigger */}
+        <button
+          type="button"
+          id="pos-keypad-pay-btn"
+          onClick={() => setIsManualPaymentOpen(true)}
+          className="px-3 py-2 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs shrink-0"
+          title="Open manual payment keypad with big numbers"
+        >
+          <Calculator className="w-4 h-4 text-[#8B7CF8]" />
+          <span className="hidden md:inline">Keypad Pay</span>
+        </button>
 
         {/* Quick Sale Button */}
         <button

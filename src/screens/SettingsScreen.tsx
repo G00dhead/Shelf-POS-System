@@ -425,12 +425,23 @@ export const SettingsScreen: React.FC = () => {
                 >
                   <td className="py-3 px-3">
                     <div className="flex items-center gap-2.5">
-                      <img
-                        src={member.avatar}
-                        alt={member.name}
-                        referrerPolicy="no-referrer"
-                        className="w-8 h-8 rounded-full object-cover border border-zinc-200 shrink-0"
-                      />
+                      {member.avatar ? (
+                        <img
+                          src={member.avatar}
+                          alt={member.name}
+                          referrerPolicy="no-referrer"
+                          className="w-8 h-8 rounded-full object-cover border border-zinc-200 shrink-0"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#6D5AE6] to-[#8B7CF8] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-2xs select-none">
+                          {member.name
+                            .split(' ')
+                            .map((n) => n[0])
+                            .slice(0, 2)
+                            .join('')
+                            .toUpperCase()}
+                        </div>
+                      )}
                       <div>
                         <div className="font-semibold text-zinc-900">{member.name}</div>
                         <div className="text-[11px] text-zinc-400">{member.email}</div>

@@ -7,7 +7,8 @@ import {
   Banknote,
   Split,
   RotateCcw,
-  ShoppingBag
+  ShoppingBag,
+  Calculator
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PaymentMethod } from '../types';
@@ -29,7 +30,8 @@ export const CartPanel: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }
     setPaymentMethod,
     chargeCurrentOrder,
     settings,
-    setMobileCartOpen
+    setMobileCartOpen,
+    setIsManualPaymentOpen
   } = useApp();
 
   const handleCharge = () => {
@@ -244,21 +246,35 @@ export const CartPanel: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }
           </div>
         </div>
 
-        {/* Charge Primary Button */}
-        <button
-          id="charge-order-button"
-          type="button"
-          disabled={cart.length === 0}
-          onClick={handleCharge}
-          className={`w-full py-3 px-4 rounded-xl text-sm font-semibold text-white tracking-wide transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer ${
-            cart.length > 0
-              ? 'bg-[#6D5AE6] hover:bg-[#5E4BD4] active:scale-[0.99]'
-              : 'bg-zinc-300 cursor-not-allowed opacity-60'
-          }`}
-        >
-          <span>Charge Order</span>
-          <span className="font-mono font-bold">{formatMoney(total, settings.currency)}</span>
-        </button>
+        {/* Payment Buttons */}
+        <div className="space-y-2">
+          <button
+            id="open-manual-payment-keypad-btn"
+            type="button"
+            onClick={() => setIsManualPaymentOpen(true)}
+            className="w-full py-2 px-3 rounded-xl text-xs font-semibold text-zinc-700 hover:text-[#6D5AE6] bg-zinc-50 hover:bg-[#6D5AE6]/5 border border-zinc-200 hover:border-[#6D5AE6]/30 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs"
+            title="Open big numbers keypad to tender cash or enter manual payment"
+          >
+            <Calculator className="w-3.5 h-3.5 text-[#6D5AE6]" />
+            <span>Manual Payment (Big Numbers Keypad)</span>
+          </button>
+
+          {/* Charge Primary Button */}
+          <button
+            id="charge-order-button"
+            type="button"
+            disabled={cart.length === 0}
+            onClick={handleCharge}
+            className={`w-full py-3 px-4 rounded-xl text-sm font-semibold text-white tracking-wide transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer ${
+              cart.length > 0
+                ? 'bg-[#6D5AE6] hover:bg-[#5E4BD4] active:scale-[0.99]'
+                : 'bg-zinc-300 cursor-not-allowed opacity-60'
+            }`}
+          >
+            <span>Charge Order</span>
+            <span className="font-mono font-bold">{formatMoney(total, settings.currency)}</span>
+          </button>
+        </div>
       </div>
     </div>
   );

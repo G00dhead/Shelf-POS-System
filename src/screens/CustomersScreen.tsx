@@ -111,12 +111,14 @@ export const CustomersScreen: React.FC = () => {
                 >
                   <td className="py-3 px-4">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={customer.avatar}
-                        alt={customer.name}
-                        referrerPolicy="no-referrer"
-                        className="w-9 h-9 rounded-full object-cover border border-zinc-200 shrink-0"
-                      />
+                      <div className="w-9 h-9 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-700 font-bold text-xs flex items-center justify-center shrink-0 shadow-2xs select-none">
+                        {customer.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .slice(0, 2)
+                          .join('')
+                          .toUpperCase()}
+                      </div>
                       <div>
                         <div className="font-semibold text-zinc-900">{customer.name}</div>
                         <div className="text-[11px] text-zinc-400">

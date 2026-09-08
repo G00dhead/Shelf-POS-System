@@ -9,7 +9,9 @@ import {
   LogOut,
   ChevronRight,
   Store,
-  Wifi
+  Wifi,
+  PanelLeftClose,
+  PanelLeftOpen
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
@@ -22,7 +24,9 @@ export const TopBar: React.FC = () => {
     setIsEndShiftOpen,
     setMobileMenuOpen,
     setMobileCartOpen,
-    cart
+    cart,
+    sidebarCollapsed,
+    toggleSidebar
   } = useApp();
 
   const [livePulse, setLivePulse] = useState(true);
@@ -98,7 +102,7 @@ export const TopBar: React.FC = () => {
     >
       <div className="flex items-center justify-between gap-4">
         {/* Left: Mobile hamburger & Screen breadcrumb */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2.5 shrink-0">
           {/* Mobile menu trigger */}
           <button
             id="mobile-menu-toggle-btn"
@@ -107,6 +111,21 @@ export const TopBar: React.FC = () => {
             aria-label="Toggle navigation menu"
           >
             <Menu className="w-5 h-5" />
+          </button>
+
+          {/* Desktop sidebar toggle button */}
+          <button
+            id="desktop-topbar-sidebar-toggle-btn"
+            onClick={toggleSidebar}
+            className="hidden lg:flex items-center justify-center p-1.5 -ml-1 text-zinc-400 hover:text-zinc-800 rounded-lg hover:bg-zinc-100 cursor-pointer transition-colors"
+            title={sidebarCollapsed ? "Expand sidebar (Ctrl+B)" : "Collapse sidebar (Ctrl+B)"}
+            aria-label="Toggle sidebar collapse state"
+          >
+            {sidebarCollapsed ? (
+              <PanelLeftOpen className="w-4 h-4 text-[#6D5AE6]" />
+            ) : (
+              <PanelLeftClose className="w-4 h-4 text-zinc-500" />
+            )}
           </button>
 
           {/* Breadcrumb Context */}

@@ -26,7 +26,8 @@ import {
   INITIAL_TAX_LOGS,
   INITIAL_INTEGRATIONS,
   INITIAL_STAFF,
-  INITIAL_SETTINGS
+  INITIAL_SETTINGS,
+  DEFAULT_PRODUCT_IMAGE
 } from '../mockData';
 
 interface AppContextType {
@@ -106,6 +107,17 @@ interface AppContextType {
   setMobileMenuOpen: (open: boolean) => void;
   mobileCartOpen: boolean;
   setMobileCartOpen: (open: boolean) => void;
+  sidebarCollapsed: boolean;
+  setSidebarCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleSidebar: () => void;
+  isManualPaymentOpen: boolean;
+  setIsManualPaymentOpen: (open: boolean) => void;
+  processManualPayment: (data: {
+    amount: number;
+    method: PaymentMethod;
+    notes?: string;
+    customerName?: string;
+  }) => Order;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -137,6 +149,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [isEndShiftOpen, setIsEndShiftOpen] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [mobileCartOpen, setMobileCartOpen] = useState<boolean>(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false);
+  const [isManualPaymentOpen, setIsManualPaymentOpen] = useState<boolean>(false);
+
+  const toggleSidebar = () => setSidebarCollapsed(prev => !prev);
 
   // Calculations
   const subtotal = useMemo(() => {
@@ -258,6 +274,75 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     // Close mobile cart if open
     setMobileCartOpen(false);
+
+    return newOrder;
+  };
+
+  // Manual payment process
+  const processManualPayment = (data: {
+    amount: number;
+    method: PaymentMethod;
+    notes?: string;
+    customerName?: string;
+  }): Order => {
+    // If cart has items and amount covers the total, charge cart
+    if (cart.length > 0 && data.amount >= total) {
+      setPaymentMethod(data.method);
+      const charged = chargeCurrentOrder();
+      if (charged) {
+        if (data.amount > charged.total) {
+          const change = Number((data.amount - charged.total).toFixed(2));
+          setOrders(prev =>
+            prev.map(o =>
+              o.id === charged.id
+                ? {
+                    ...o,
+                    notes: `Tendered: ${settings.currency}${data.amount.toLocaleString()} | Change: ${settings.currency}${change.toLocaleString()}${data.notes ? ` • ${data.notes}` : ''}`
+                  }
+                : o
+            )
+          );
+        }
+        setIsManualPaymentOpen(false);
+        return charged;
+      }
+    }
+
+    // Direct standalone manual payment
+    const newOrderNumber = `#${1049 + orders.length}`;
+    const newOrder: Order = {
+      id: `ord-${Date.now()}`,
+      orderNumber: newOrderNumber,
+      items: [
+        {
+          productId: `manual-${Date.now()}`,
+          productName: data.notes?.trim() || 'Manual POS Payment Entry',
+          unitPrice: data.amount,
+          quantity: 1,
+          lineTotal: data.amount,
+          image: DEFAULT_PRODUCT_IMAGE
+        }
+      ],
+      subtotal: data.amount,
+      tax: 0,
+      taxRate: 0,
+      discount: 0,
+      total: data.amount,
+      paymentMethod: data.method,
+      status: 'completed',
+      cashier: settings.cashierName,
+      timestamp: 'Just now',
+      customerName: data.customerName?.trim() || 'Walk-in Customer',
+      notes: data.notes?.trim() || 'Manual payment entry'
+    };
+
+    if (data.method === 'cash') {
+      setDrawerAmount(prev => Number((prev + data.amount).toFixed(2)));
+    }
+
+    setOrders(prev => [newOrder, ...prev]);
+    setLastOrderReceipt(newOrder);
+    setIsManualPaymentOpen(false);
 
     return newOrder;
   };
@@ -498,7 +583,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         mobileMenuOpen,
         setMobileMenuOpen,
         mobileCartOpen,
-        setMobileCartOpen
+        setMobileCartOpen,
+        sidebarCollapsed,
+        setSidebarCollapsed,
+        toggleSidebar,
+        isManualPaymentOpen,
+        setIsManualPaymentOpen,
+        processManualPayment
       }}
     >
       {children}

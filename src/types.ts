@@ -23,6 +23,23 @@ export interface Product {
   reviewsCount?: number;
   discountPercent?: number; // e.g. 10 for 10%
   discountFixed?: number; // e.g. ₦500 off
+  reorderThreshold: number; // Defined minimum quantity threshold before triggering reorder alert
+}
+
+export interface StockAlert {
+  id: string;
+  productId: string;
+  productName: string;
+  sku: string;
+  barcode: string;
+  category: Category;
+  image: string;
+  currentStock: number;
+  reorderThreshold: number;
+  deficit: number;
+  severity: 'critical' | 'warning';
+  triggeredAt: string;
+  status: 'active' | 'acknowledged' | 'reordered';
 }
 
 export interface CartItem {

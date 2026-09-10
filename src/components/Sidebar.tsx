@@ -15,7 +15,8 @@ import {
   Settings,
   X,
   PanelLeftClose,
-  PanelLeftOpen
+  PanelLeftOpen,
+  Calculator
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { ScreenId } from '../types';
@@ -42,6 +43,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
     setCurrentScreen,
     orders,
     products,
+    stockAlerts,
     setMobileMenuOpen,
     sidebarCollapsed,
     toggleSidebar
@@ -49,7 +51,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
 
   const isCollapsed = sidebarCollapsed && !forceExpanded;
 
-  const lowStockCount = products.filter(p => p.stock <= 15).length;
+  const lowStockCount = stockAlerts.filter(a => a.status === 'active').length;
   const heldOrdersCount = orders.filter(o => o.status === 'held').length;
 
   // Keyboard shortcut Ctrl+B or Cmd+B to toggle sidebar
@@ -95,7 +97,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
       label: 'PLATFORM',
       items: [
         { id: 'marketplace', label: 'Marketplace', icon: Store },
-        { id: 'pos', label: 'POS', icon: Tag },
+        { id: 'pos', label: 'POS', icon: Calculator },
         { id: 'settings', label: 'Settings', icon: Settings }
       ]
     }

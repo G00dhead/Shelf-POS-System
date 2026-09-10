@@ -61,7 +61,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'High quality premium wheat flour semovita, rich in fiber and proteins. Staple swallow.',
     rating: 4.9,
     reviewsCount: 142,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
   {
     id: 'prod-2',
@@ -77,7 +78,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Original Onion Chicken instant noodles full carton. Family size favourite across Nigeria.',
     rating: 4.9,
     reviewsCount: 310,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 20
   },
   {
     id: 'prod-3',
@@ -93,7 +95,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Rich, creamy evaporated full cream milk tin pack, enriched with 28 vitamins and minerals.',
     rating: 4.8,
     reviewsCount: 95,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 30
   },
   {
     id: 'prod-4',
@@ -103,13 +106,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Groceries',
     price: 11200,
     cost: 9500,
-    stock: 32,
+    stock: 12,
     unit: '3.5L Jerrycan',
     image: mamadorOilImg,
     description: 'Cholesterol-free pure vegetable oil fortified with Vitamin A. Heart-friendly cooking oil.',
     rating: 4.7,
     reviewsCount: 68,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
   {
     id: 'prod-5',
@@ -125,7 +129,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Premium granulated refined white cane sugar, fortified with Vitamin A.',
     rating: 4.8,
     reviewsCount: 54,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 30
   },
   {
     id: 'prod-6',
@@ -141,7 +146,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'The energy food drink of future champions. Activ-Go chocolate malt powder refill.',
     rating: 4.9,
     reviewsCount: 180,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 20
   },
   {
     id: 'prod-7',
@@ -157,7 +163,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Thick triple-concentrated tomato paste spiced with Nigerian pepper and fresh onions for stew.',
     rating: 4.7,
     reviewsCount: 82,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 35
   },
   {
     id: 'prod-8',
@@ -173,7 +180,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Classic Portuguese wild-caught canned sardines in pure soybean oil with Omega-3.',
     rating: 4.9,
     reviewsCount: 210,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 40
   },
 
   // --- TOILETRIES & PERSONAL CARE ---
@@ -191,7 +199,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Dettol Cool bar soap with refreshing menthol and trusted germ protection for all the family.',
     rating: 4.8,
     reviewsCount: 115,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
   {
     id: 'prod-10',
@@ -207,7 +216,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Triple action cavity defense, fresh breath mint, and enamel strengthening toothpaste.',
     rating: 4.8,
     reviewsCount: 76,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 30
   },
   {
     id: 'prod-11',
@@ -223,7 +233,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Superior leakguard core with wings. All-day clean and dry comfort for women.',
     rating: 4.9,
     reviewsCount: 160,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
   {
     id: 'prod-12',
@@ -233,13 +244,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Toiletries & Personal Care',
     price: 4700,
     cost: 3750,
-    stock: 38,
+    stock: 6,
     unit: '400ml Bottle',
     image: niveaLotionImg,
     description: 'Deep moisture serum infused with natural cocoa butter and Vitamin E for 48h glowing skin.',
     rating: 4.9,
     reviewsCount: 94,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 20
   },
   {
     id: 'prod-13',
@@ -255,7 +267,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Spicy clove extract gel with antibacterial zinc mouthwash formula for 12-hour fresh breath.',
     rating: 4.7,
     reviewsCount: 88,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 30
   },
   {
     id: 'prod-14',
@@ -271,7 +284,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Gentle, virgin wood pulp absorbent 2-ply facial tissues in decorative dispenser box.',
     rating: 4.6,
     reviewsCount: 42,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
 
   // --- HOUSEHOLD & CLEANING ---
@@ -289,7 +303,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Superior grease-cutting power, just one drop cleans sink full of plates. Lemon fresh scent.',
     rating: 4.9,
     reviewsCount: 135,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 20
   },
   {
     id: 'prod-16',
@@ -305,7 +320,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Tough stain removal in 1 wash with downy freshness. Safe on colors and whites.',
     rating: 4.8,
     reviewsCount: 110,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 15
   },
   {
     id: 'prod-17',
@@ -315,13 +331,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Household & Cleaning',
     price: 2200,
     cost: 1680,
-    stock: 64,
+    stock: 14,
     unit: '750ml Bottle',
     image: harpicGelImg,
     description: 'Kills 99.9% of germs, limescale remover, and deep bowl disinfection formula.',
     rating: 4.8,
     reviewsCount: 52,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
 
   // --- DRINKS & BEVERAGES ---
@@ -339,7 +356,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Smooth nourishing premium malt drink with natural vitamins and minerals.',
     rating: 4.9,
     reviewsCount: 220,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 20
   },
   {
     id: 'prod-19',
@@ -355,7 +373,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Refreshing blend of ripe tropical pineapples and rich creamy coconut juice nectar.',
     rating: 4.8,
     reviewsCount: 140,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
   {
     id: 'prod-20',
@@ -371,7 +390,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Crisp, refreshing pure natural mineral spring water bottled at source under strict hygiene.',
     rating: 4.9,
     reviewsCount: 88,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 30
   },
 
   // --- BAKERY & SNACKS ---
@@ -389,7 +409,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Soft, fluffy bakery oven-fresh sweet butter bread. Best paired with hot tea or fried eggs.',
     rating: 4.9,
     reviewsCount: 195,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 15
   },
   {
     id: 'prod-22',
@@ -405,7 +426,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Taste the fun! Nutmeg-spiced golden crisp pastry bites in airtight reusable canister.',
     rating: 4.8,
     reviewsCount: 112,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 15
   },
   {
     id: 'prod-23',
@@ -421,7 +443,8 @@ export const INITIAL_PRODUCTS: Product[] = [
     description: 'Crunchy golden thinly sliced sweet plantain chips seasoned with sea salt and chili pepper.',
     rating: 4.7,
     reviewsCount: 84,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 25
   },
 
   // --- FRESH & FROZEN ---
@@ -433,13 +456,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: 'Fresh & Frozen',
     price: 5200,
     cost: 4300,
-    stock: 28,
+    stock: 8,
     unit: 'Crate (30)',
     image: crateEggsImg,
     description: 'Grade A fresh large brown eggs directly sourced from Ogun State poultry farms.',
     rating: 4.9,
     reviewsCount: 146,
-    discountPercent: 0
+    discountPercent: 0,
+    reorderThreshold: 20
   }
 ];
 

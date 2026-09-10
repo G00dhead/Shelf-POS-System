@@ -271,6 +271,7 @@ export const CartPanel: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }
                 : 'bg-zinc-300 cursor-not-allowed opacity-60'
             }`}
           >
+            <CreditCard className="w-4 h-4 shrink-0" />
             <span>Charge Order</span>
             <span className="font-mono font-bold">{formatMoney(total, settings.currency)}</span>
           </button>

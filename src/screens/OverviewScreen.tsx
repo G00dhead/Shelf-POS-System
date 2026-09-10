@@ -9,14 +9,15 @@ import {
   Eye,
   Check,
   Package,
-  Boxes
+  Boxes,
+  ArrowRight
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 import { DEFAULT_PRODUCT_IMAGE } from '../mockData';
 
 export const OverviewScreen: React.FC = () => {
-  const { orders, products, setProducts, setCurrentScreen, setSelectedOrderForModal, settings, drawerAmount } =
+  const { orders, products, setProducts, setCurrentScreen, setSelectedOrderForModal, settings, drawerAmount, stockAlerts } =
     useApp();
   const [activeChartPoint, setActiveChartPoint] = useState<number | null>(null);
   const [velocityPeriod, setVelocityPeriod] = useState<'today' | '7days'>('today');
@@ -27,8 +28,10 @@ export const OverviewScreen: React.FC = () => {
   const transactionCount = completedOrders.length;
   const avgBasket = transactionCount > 0 ? todayRevenue / transactionCount : 0;
   
-  // Sorted items with lowest stock first for reorder queue
-  const lowStockItems = [...products].sort((a, b) => a.stock - b.stock).slice(0, 4);
+  // Sorted items with active alerts or lowest stock for reorder queue
+  const lowStockItems = stockAlerts.length > 0
+    ? stockAlerts.slice(0, 4).map(alert => products.find(p => p.id === alert.productId)!).filter(Boolean)
+    : [...products].sort((a, b) => a.stock - b.stock).slice(0, 4);
 
   // Hourly velocity bar data (Nigeria Naira) matching Image 2
   const TODAY_VELOCITY = [
@@ -118,7 +121,7 @@ export const OverviewScreen: React.FC = () => {
 
         {/* Low Stock Alert Count */}
         <div
-          onClick={() => setCurrentScreen('catalog')}
+          onClick={() => setCurrentScreen('alerts')}
           className="p-4 rounded-xl border border-zinc-200 bg-white space-y-2 cursor-pointer hover:border-amber-400 transition-colors group"
         >
           <div className="flex items-center justify-between text-zinc-400">
@@ -131,13 +134,16 @@ export const OverviewScreen: React.FC = () => {
           </div>
           <div className="flex items-baseline justify-between">
             <h2 className="text-2xl font-bold font-mono text-zinc-900">
-              {lowStockItems.length}
+              {stockAlerts.length}
             </h2>
-            <span className="text-[11px] font-medium text-amber-600 group-hover:underline">
-              View Items →
+            <span className="text-[11px] font-medium text-amber-600 group-hover:underline inline-flex items-center gap-1">
+              <span>View Alerts</span>
+              <ArrowRight className="w-3 h-3" />
             </span>
           </div>
-          <p className="text-[11px] text-zinc-400">Threshold ≤ 15 units in supermarket stock</p>
+          <p className="text-[11px] text-zinc-400">
+            {stockAlerts.length > 0 ? `${stockAlerts.length} products below reorder point` : 'All items above reorder thresholds'}
+          </p>
         </div>
 
         {/* Shift Drawer Amount */}
@@ -264,12 +270,21 @@ export const OverviewScreen: React.FC = () => {
         <div className="p-5 rounded-xl border border-zinc-200 bg-white flex flex-col justify-between space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold text-zinc-900">Stock Reorder Queue</h3>
-            <button
-              onClick={() => setCurrentScreen('catalog')}
-              className="text-xs font-semibold text-[#6D5AE6] hover:underline cursor-pointer"
-            >
-              View Catalog
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setCurrentScreen('alerts')}
+                className="text-xs font-semibold text-amber-600 hover:underline cursor-pointer"
+              >
+                Alerts Center
+              </button>
+              <span className="text-zinc-300">•</span>
+              <button
+                onClick={() => setCurrentScreen('catalog')}
+                className="text-xs font-semibold text-[#6D5AE6] hover:underline cursor-pointer"
+              >
+                Catalog
+              </button>
+            </div>
           </div>
 
           {/* List of low stock items ready for reorder */}
@@ -357,9 +372,10 @@ export const OverviewScreen: React.FC = () => {
           </div>
           <button
             onClick={() => setCurrentScreen('orders')}
-            className="text-xs font-medium text-[#6D5AE6] hover:underline cursor-pointer"
+            className="text-xs font-medium text-[#6D5AE6] hover:underline cursor-pointer inline-flex items-center gap-1"
           >
-            View all queue →
+            <span>View all queue</span>
+            <ArrowRight className="w-3 h-3" />
           </button>
         </div>
 

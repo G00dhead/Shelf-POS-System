@@ -1,6 +1,8 @@
 {
   "name": "Shelf POS & Inventory",
   "description": "Shelf supermarket POS and inventory system featuring groceries and toiletries, real-time barcode scanning, cash drawer tracking, and admin product management.",
-  "requestFramePermissions": [],
+  "requestFramePermissions": [
+    "camera"
+  ],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

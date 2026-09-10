@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useMemo } from 'react';
+import React, { createContext, useContext, useState, useMemo, useEffect, useCallback } from 'react';
 import {
   Product,
   CartItem,
@@ -13,7 +13,8 @@ import {
   StaffMember,
   StoreSettings,
   ScreenId,
-  Category
+  Category,
+  StockAlert
 } from '../types';
 import {
   INITIAL_PRODUCTS,
@@ -118,6 +119,15 @@ interface AppContextType {
     notes?: string;
     customerName?: string;
   }) => Order;
+
+  // Inventory Reorder Alerts & Automated Background Check
+  stockAlerts: StockAlert[];
+  lastInventoryScan: string | null;
+  isScanningInventory: boolean;
+  runCatalogBackgroundCheck: () => { scannedCount: number; alertsTriggered: number };
+  acknowledgeAlert: (alertId: string) => void;
+  quickRestockProduct: (productId: string, quantityToAdd: number) => void;
+  updateReorderThreshold: (productId: string, newThreshold: number) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -131,6 +141,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [cart, setCart] = useState<CartItem[]>(INITIAL_CART_ITEMS);
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card');
   const [discountAmount, setDiscountAmount] = useState<number>(0);
+
+  // Background check and alerts state
+  const [stockAlerts, setStockAlerts] = useState<StockAlert[]>([]);
+  const [lastInventoryScan, setLastInventoryScan] = useState<string | null>(null);
+  const [isScanningInventory, setIsScanningInventory] = useState<boolean>(false);
 
   const [orders, setOrders] = useState<Order[]>(INITIAL_ORDERS);
   const [customers, setCustomers] = useState<Customer[]>(INITIAL_CUSTOMERS);
@@ -374,6 +389,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         price: item.unitPrice,
         cost: item.unitPrice * 0.4,
         stock: 20,
+        reorderThreshold: 15,
         image: item.image
       };
       return {
@@ -399,6 +415,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     const newProduct: Product = {
       ...productData,
+      reorderThreshold: typeof productData.reorderThreshold === 'number' ? productData.reorderThreshold : 15,
       barcode: generatedBarcode,
       id: `prod-${Date.now()}`,
       rating: 5.0,
@@ -416,6 +433,25 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const deleteProduct = (id: string) => {
     setProducts(prev => prev.filter(p => p.id !== id));
     removeFromCart(id);
+  };
+
+  const quickRestockProduct = (productId: string, quantityToAdd: number) => {
+    setProducts(prev =>
+      prev.map(p => {
+        if (p.id === productId) {
+          const newStock = Math.max(0, p.stock + quantityToAdd);
+          return { ...p, stock: newStock };
+        }
+        return p;
+      })
+    );
+  };
+
+  const updateReorderThreshold = (productId: string, newThreshold: number) => {
+    const valid = Math.max(0, newThreshold);
+    setProducts(prev =>
+      prev.map(p => (p.id === productId ? { ...p, reorderThreshold: valid } : p))
+    );
   };
 
   const scanBarcode = (barcodeOrSku: string): boolean => {
@@ -526,6 +562,77 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setSettings(prev => ({ ...prev, ...updates }));
   };
 
+  // Background check core evaluation function
+  const evaluateCatalogStock = useCallback((currentProducts: Product[]) => {
+    const nowStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    const triggered: StockAlert[] = [];
+
+    currentProducts.forEach(prod => {
+      const threshold = typeof prod.reorderThreshold === 'number' ? prod.reorderThreshold : 15;
+      if (prod.stock <= threshold) {
+        const deficit = Math.max(0, threshold - prod.stock);
+        const severity: 'critical' | 'warning' =
+          prod.stock === 0 || prod.stock <= Math.floor(threshold / 2) ? 'critical' : 'warning';
+
+        triggered.push({
+          id: `alert-${prod.id}`,
+          productId: prod.id,
+          productName: prod.name,
+          sku: prod.sku,
+          barcode: prod.barcode,
+          category: prod.category,
+          image: prod.image,
+          currentStock: prod.stock,
+          reorderThreshold: threshold,
+          deficit,
+          severity,
+          triggeredAt: nowStr,
+          status: 'active'
+        });
+      }
+    });
+
+    // Sort by critical severity first, then by greatest stock deficit
+    triggered.sort((a, b) => {
+      if (a.severity === 'critical' && b.severity !== 'critical') return -1;
+      if (b.severity === 'critical' && a.severity !== 'critical') return 1;
+      return b.deficit - a.deficit;
+    });
+
+    setStockAlerts(triggered);
+    setLastInventoryScan(nowStr);
+    return { scannedCount: currentProducts.length, alertsTriggered: triggered.length };
+  }, []);
+
+  // Manual or on-demand catalog check trigger
+  const runCatalogBackgroundCheck = useCallback(() => {
+    setIsScanningInventory(true);
+    const result = evaluateCatalogStock(products);
+    setTimeout(() => {
+      setIsScanningInventory(false);
+    }, 450);
+    return result;
+  }, [evaluateCatalogStock, products]);
+
+  // Automated background check on any products catalog changes (sales, restocks, edits)
+  useEffect(() => {
+    evaluateCatalogStock(products);
+  }, [products, evaluateCatalogStock]);
+
+  // Periodic automated background interval (runs continuous check every 20 seconds)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      evaluateCatalogStock(products);
+    }, 20000);
+    return () => clearInterval(timer);
+  }, [products, evaluateCatalogStock]);
+
+  const acknowledgeAlert = (alertId: string) => {
+    setStockAlerts(prev =>
+      prev.map(a => (a.id === alertId ? { ...a, status: 'acknowledged' } : a))
+    );
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -589,7 +696,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         toggleSidebar,
         isManualPaymentOpen,
         setIsManualPaymentOpen,
-        processManualPayment
+        processManualPayment,
+        stockAlerts,
+        lastInventoryScan,
+        isScanningInventory,
+        runCatalogBackgroundCheck,
+        acknowledgeAlert,
+        quickRestockProduct,
+        updateReorderThreshold
       }}
     >
       {children}

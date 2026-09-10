@@ -8,7 +8,8 @@ import {
   CheckCircle2,
   X,
   PackagePlus,
-  Calculator
+  Calculator,
+  ShoppingBag
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { Category, Product } from '../types';
@@ -120,6 +121,7 @@ export const PosScreen: React.FC = () => {
       price: data.price,
       cost: Math.round(data.price * 0.7),
       stock: 999,
+      reorderThreshold: 10,
       image: data.image || DEFAULT_PRODUCT_IMAGE,
       unit: 'item',
       description: `Quick sale item: ${data.description}`
@@ -464,6 +466,9 @@ export const PosScreen: React.FC = () => {
             className="w-full py-3 px-4 rounded-xl bg-[#6D5AE6] text-white text-sm font-semibold flex items-center justify-between shadow-md active:scale-[0.99] transition-transform cursor-pointer"
           >
             <div className="flex items-center gap-2">
+              <span className="bg-white/20 p-1 rounded-lg">
+                <ShoppingBag className="w-4 h-4" />
+              </span>
               <span className="bg-white/20 px-2 py-0.5 rounded-full text-xs font-bold">
                 {totalCartCount}
               </span>

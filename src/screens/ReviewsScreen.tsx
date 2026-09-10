@@ -60,13 +60,20 @@ export const ReviewsScreen: React.FC = () => {
             <button
               key={r}
               onClick={() => setStarFilter(r)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer flex items-center gap-1 ${
                 starFilter === r
                   ? 'bg-zinc-900 text-white'
                   : 'bg-white border border-zinc-200 text-zinc-600 hover:bg-zinc-100'
               }`}
             >
-              {r === 'all' ? 'All Ratings' : `${r} Stars ★`}
+              {r === 'all' ? (
+                'All Ratings'
+              ) : (
+                <>
+                  <span>{r} Stars</span>
+                  <Star className="w-3 h-3 fill-current text-amber-400" />
+                </>
+              )}
             </button>
           ))}
         </div>

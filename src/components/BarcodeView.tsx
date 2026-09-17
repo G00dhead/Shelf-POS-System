@@ -1,5 +1,5 @@
 import React from 'react';
-import { Printer, X, Tag } from 'lucide-react';
+import { Printer, X, Tag } from './icons';
 
 interface BarcodeViewProps {
   code: string;

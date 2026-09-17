@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LogOut, Banknote, Check, X, AlertTriangle } from 'lucide-react';
+import { LogOut, Banknote, Check, X, AlertTriangle } from './icons';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 

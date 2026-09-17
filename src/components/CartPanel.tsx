@@ -9,7 +9,7 @@ import {
   RotateCcw,
   ShoppingBag,
   Calculator
-} from 'lucide-react';
+} from './icons';
 import { useApp } from '../context/AppContext';
 import { PaymentMethod } from '../types';
 import { formatMoney } from '../utils/format';
@@ -47,7 +47,7 @@ export const CartPanel: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }
     <div
       id="cart-panel"
       className={`bg-white flex flex-col justify-between h-full ${
-        isMobile ? 'w-full' : 'w-[320px] border-l border-zinc-200 shrink-0'
+        isMobile ? 'w-full' : 'w-[300px] xl:w-[320px] border-l border-zinc-200 shrink-0'
       }`}
     >
       {/* Header */}

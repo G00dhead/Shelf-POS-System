@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Wifi, Cpu, HardDrive, ShieldCheck, Zap } from 'lucide-react';
+import { Activity, Wifi, Cpu, HardDrive, ShieldCheck, Zap } from '../components/icons';
 import { useApp } from '../context/AppContext';
 
 export const LiveMonitorScreen: React.FC = () => {

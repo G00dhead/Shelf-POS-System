@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, ThumbsUp, MessageSquare } from 'lucide-react';
+import { Star, CheckCircle, ThumbsUp, MessageSquare } from '../components/icons';
 import { useApp } from '../context/AppContext';
 
 export const ReviewsScreen: React.FC = () => {

@@ -71,7 +71,7 @@ const MainAppLayout: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-white text-zinc-900 font-sans antialiased">
+    <div className="flex h-screen w-full max-w-full overflow-hidden bg-white text-zinc-900 font-sans antialiased">
       {/* 1. Desktop Left Sidebar */}
       <div className="hidden lg:flex h-full shrink-0">
         <Sidebar />

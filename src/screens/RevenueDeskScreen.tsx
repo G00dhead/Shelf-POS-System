@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DollarSign, TrendingUp, BarChart3, CreditCard, Banknote, Calendar } from 'lucide-react';
+import { DollarSign, TrendingUp, BarChart3, CreditCard, Banknote, Calendar } from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { DEFAULT_PRODUCT_IMAGE } from '../mockData';
 

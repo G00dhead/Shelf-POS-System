@@ -13,7 +13,7 @@ import {
   Receipt,
   RefreshCw,
   SlidersHorizontal
-} from 'lucide-react';
+} from './icons';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 import { PaymentMethod } from '../types';

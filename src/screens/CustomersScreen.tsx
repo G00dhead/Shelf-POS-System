@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Users, Search, Plus, Award, Mail, Phone, Calendar, X } from 'lucide-react';
+import { Users, Search, Plus, Award, Mail, Phone, Calendar, X } from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 

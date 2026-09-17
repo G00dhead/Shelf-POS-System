@@ -15,7 +15,7 @@ import {
   Filter,
   Search,
   ExternalLink
-} from 'lucide-react';
+} from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 

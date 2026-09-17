@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Printer, Mail, X, ShoppingBag, Check } from 'lucide-react';
+import { CheckCircle2, Printer, Mail, X, ShoppingBag, Check } from './icons';
 import { useApp } from '../context/AppContext';
 import { Order } from '../types';
 import { formatMoney } from '../utils/format';

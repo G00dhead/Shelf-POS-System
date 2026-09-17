@@ -10,7 +10,7 @@ import {
   ChevronRight,
   Store,
   Wifi
-} from 'lucide-react';
+} from './icons';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 
@@ -94,11 +94,11 @@ export const TopBar: React.FC = () => {
   return (
     <header
       id="app-topbar"
-      className="bg-white/95 backdrop-blur-md border-b border-zinc-200/80 px-4 sm:px-6 py-2.5 min-h-[58px] flex flex-col justify-center shrink-0 z-20"
+      className="bg-white/95 backdrop-blur-md border-b border-zinc-200/80 px-3 sm:px-5 py-2.5 min-h-[56px] flex flex-col justify-center shrink-0 z-20 w-full max-w-full overflow-hidden"
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex items-center justify-between gap-2 sm:gap-3 w-full min-w-0">
         {/* Left: Mobile hamburger & Screen breadcrumb */}
-        <div className="flex items-center gap-2.5 shrink-0">
+        <div className="flex items-center gap-2 shrink-0 min-w-0">
           {/* Mobile menu trigger */}
           <button
             id="mobile-menu-toggle-btn"
@@ -110,63 +110,61 @@ export const TopBar: React.FC = () => {
           </button>
 
           {/* Breadcrumb Context */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-2 shrink-0 min-w-0">
             {/* Live Terminal Signal */}
             <div className="relative flex items-center justify-center w-2.5 h-2.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </div>
 
-            <div className="flex items-center gap-1.5 text-xs shrink-0">
+            <div className="flex items-center gap-1.5 text-xs shrink-0 min-w-0">
               <div className="hidden 2xl:flex items-center gap-1 text-zinc-500 bg-zinc-100/90 px-2 py-0.5 rounded-md text-[11px] font-medium border border-zinc-200/50 shrink-0">
                 <Store className="w-3 h-3 text-zinc-400" />
-                <span className="truncate max-w-[130px]">{settings.storeName}</span>
+                <span className="truncate max-w-[110px]">{settings.storeName}</span>
               </div>
 
               <ChevronRight className="w-3.5 h-3.5 text-zinc-300 hidden 2xl:inline shrink-0" />
 
-              <h1 className="text-sm font-bold text-zinc-900 tracking-tight whitespace-nowrap shrink-0">
+              <h1 className="text-sm font-bold text-zinc-900 tracking-tight whitespace-nowrap">
                 {formatScreenTitle(currentScreen)}
               </h1>
             </div>
           </div>
         </div>
 
-        {/* Center: Register Status Badges (Shown when space permits on wide screens) */}
-        <div className="hidden 2xl:flex items-center gap-2.5 text-xs shrink-0">
+        {/* Center: Register Status Badges (Responsive, compact, no overflow) */}
+        <div className="hidden 2xl:flex items-center gap-2 text-xs shrink min-w-0">
           {/* Cashier Chip */}
-          <div className="flex items-center gap-1.5 bg-zinc-50 hover:bg-zinc-100/80 border border-zinc-200/80 rounded-lg px-2.5 py-1 text-zinc-700 transition-colors">
-            <User className="w-3.5 h-3.5 text-zinc-400" />
-            <span className="text-zinc-400 font-normal">Cashier:</span>
-            <span className="font-semibold text-zinc-900">{settings.cashierName}</span>
+          <div className="flex items-center gap-1.5 bg-zinc-50 hover:bg-zinc-100/80 border border-zinc-200/80 rounded-lg px-2 py-1 text-zinc-700 transition-colors shrink min-w-0">
+            <User className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+            <span className="text-zinc-400 font-normal shrink-0">Cashier:</span>
+            <span className="font-semibold text-zinc-900 truncate max-w-[100px]">{settings.cashierName}</span>
           </div>
 
           {/* Shift & Clock */}
-          <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-200/80 rounded-lg px-2.5 py-1 text-zinc-600 font-mono text-[11px]">
+          <div className="flex items-center gap-1.5 bg-zinc-50 border border-zinc-200/80 rounded-lg px-2 py-1 text-zinc-600 font-mono text-[11px] shrink-0">
             <Clock className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-            <span className="text-zinc-500 font-sans">Shift {settings.shiftStartTime}</span>
-            <span className="text-zinc-300 font-sans">•</span>
             <span className="font-semibold text-zinc-800">{currentTime || '--:--:--'}</span>
           </div>
 
           {/* Drawer Float Badge */}
-          <div className="flex items-center gap-1.5 bg-emerald-50/70 border border-emerald-200/80 rounded-lg px-2.5 py-1 text-emerald-900">
+          <div className="flex items-center gap-1.5 bg-emerald-50/70 border border-emerald-200/80 rounded-lg px-2 py-1 text-emerald-900 shrink-0">
             <Banknote className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="text-emerald-700/80 text-[11px] font-medium font-sans">Float:</span>
-            <span className="font-mono font-bold text-xs">
+            <span className="text-emerald-700/80 text-[11px] font-medium font-sans shrink-0">Float:</span>
+            <span className="font-mono font-bold text-xs shrink-0">
               {formatMoney(drawerAmount, settings.currency)}
             </span>
           </div>
         </div>
 
         {/* Right: Cloud Sync, End Shift & Mobile Cart */}
-        <div className="flex items-center gap-2.5 shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
           {/* Cloud Sync Status Indicator */}
-          <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-50 border border-zinc-200/70 text-[11px] text-zinc-500 font-medium">
+          <div className="hidden xl:flex items-center gap-1.5 px-2 py-1 rounded-lg bg-zinc-50 border border-zinc-200/70 text-[11px] text-zinc-500 font-medium shrink-0">
             <Wifi className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="hidden xl:inline">Live POS Sync</span>
+            <span className="hidden 2xl:inline">Live POS Sync</span>
             <RotateCw
-              className={`w-3 h-3 text-emerald-600 transition-transform duration-700 ${
+              className={`w-3 h-3 text-emerald-600 shrink-0 transition-transform duration-700 ${
                 livePulse ? 'rotate-180' : 'rotate-0'
               }`}
             />
@@ -176,10 +174,10 @@ export const TopBar: React.FC = () => {
           <button
             id="end-shift-topbar-btn"
             onClick={() => setIsEndShiftOpen(true)}
-            className="px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:text-red-700 bg-zinc-50 hover:bg-red-50/80 rounded-lg border border-zinc-200 hover:border-red-200/80 flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer"
+            className="px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:text-red-700 bg-zinc-50 hover:bg-red-50/80 rounded-lg border border-zinc-200 hover:border-red-200/80 flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer shrink-0 whitespace-nowrap"
             title="End shift and reconcile register cash drawer"
           >
-            <LogOut className="w-3.5 h-3.5 text-zinc-500 group-hover:text-red-600" />
+            <LogOut className="w-3.5 h-3.5 text-zinc-500 group-hover:text-red-600 shrink-0" />
             <span>End Shift</span>
           </button>
 
@@ -187,7 +185,7 @@ export const TopBar: React.FC = () => {
           <button
             id="mobile-cart-toggle-btn"
             onClick={() => setMobileCartOpen(true)}
-            className="lg:hidden relative p-2 text-zinc-700 hover:text-zinc-900 bg-zinc-100 hover:bg-zinc-200/80 rounded-lg cursor-pointer transition-colors"
+            className="lg:hidden relative p-2 text-zinc-700 hover:text-zinc-900 bg-zinc-100 hover:bg-zinc-200/80 rounded-lg cursor-pointer transition-colors shrink-0"
             aria-label="View cart"
           >
             <ShoppingBag className="w-5 h-5" />

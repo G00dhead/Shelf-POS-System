@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Camera, X, Scan, Zap, Check, AlertCircle } from 'lucide-react';
+import { Camera, X, Scan, Zap, Check, AlertCircle } from './icons';
 import { playBarcodeScanBeep, playScanErrorBeep } from '../utils/audio';
 import { Product } from '../types';
 import { DEFAULT_PRODUCT_IMAGE } from '../mockData';

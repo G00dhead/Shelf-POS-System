@@ -13,7 +13,7 @@ import {
   Barcode as BarcodeIcon,
   Sparkles,
   ArrowRight
-} from 'lucide-react';
+} from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { StaffMember, Product, Category } from '../types';
 import { formatMoney } from '../utils/format';

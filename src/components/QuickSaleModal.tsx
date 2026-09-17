@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, PackagePlus, Plus, Minus, Tag, DollarSign, ShoppingBag } from 'lucide-react';
+import { X, PackagePlus, Plus, Minus, Tag, DollarSign, ShoppingBag } from './icons';
 import { Category } from '../types';
 import { formatMoney } from '../utils/format';
 import { DEFAULT_PRODUCT_IMAGE } from '../mockData';

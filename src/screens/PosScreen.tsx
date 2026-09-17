@@ -10,7 +10,7 @@ import {
   PackagePlus,
   Calculator,
   ShoppingBag
-} from 'lucide-react';
+} from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { Category, Product } from '../types';
 import { formatMoney } from '../utils/format';
@@ -277,7 +277,7 @@ export const PosScreen: React.FC = () => {
           className="px-3 py-2 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs shrink-0"
           title="Open manual payment keypad with big numbers"
         >
-          <Calculator className="w-4 h-4 text-[#8B7CF8]" />
+          <Calculator className="w-4 h-4 text-[#16A34A]" />
           <span className="hidden md:inline">Keypad Pay</span>
         </button>
 

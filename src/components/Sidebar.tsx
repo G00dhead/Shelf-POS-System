@@ -17,7 +17,7 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   Calculator
-} from 'lucide-react';
+} from './icons';
 import { useApp } from '../context/AppContext';
 import { ScreenId } from '../types';
 

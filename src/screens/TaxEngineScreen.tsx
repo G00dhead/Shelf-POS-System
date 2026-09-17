@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Receipt, Percent, Check, ShieldCheck, Landmark } from 'lucide-react';
+import { Receipt, Percent, Check, ShieldCheck, Landmark } from '../components/icons';
 import { useApp } from '../context/AppContext';
 
 export const TaxEngineScreen: React.FC = () => {

@@ -11,7 +11,7 @@ import {
   Package,
   Boxes,
   ArrowRight
-} from 'lucide-react';
+} from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 import { DEFAULT_PRODUCT_IMAGE } from '../mockData';

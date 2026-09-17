@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CreditCard, Download, ArrowUpRight, CheckCircle2, Clock, Landmark } from 'lucide-react';
+import { CreditCard, Download, ArrowUpRight, CheckCircle2, Clock, Landmark } from '../components/icons';
 import { useApp } from '../context/AppContext';
 
 export const PayoutsScreen: React.FC = () => {

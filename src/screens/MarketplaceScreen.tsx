@@ -11,7 +11,7 @@ import {
   Layers,
   Settings,
   X
-} from 'lucide-react';
+} from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { Integration } from '../types';
 

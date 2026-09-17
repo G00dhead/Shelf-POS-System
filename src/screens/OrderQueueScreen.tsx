@@ -10,7 +10,7 @@ import {
   FileText,
   Download,
   Check
-} from 'lucide-react';
+} from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { OrderStatus, Order } from '../types';
 import { formatMoney } from '../utils/format';

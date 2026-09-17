@@ -1,5 +1,5 @@
 import React from 'react';
-import { X } from 'lucide-react';
+import { X } from './icons';
 import { useApp } from '../context/AppContext';
 import { CartPanel } from './CartPanel';
 

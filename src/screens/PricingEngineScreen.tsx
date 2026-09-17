@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tag, Percent, Sparkles, Check, ArrowRight } from 'lucide-react';
+import { Tag, Percent, Sparkles, Check, ArrowRight } from '../components/icons';
 import { useApp } from '../context/AppContext';
 import { formatMoney } from '../utils/format';
 import { DEFAULT_PRODUCT_IMAGE } from '../mockData';

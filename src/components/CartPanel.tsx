@@ -234,7 +234,7 @@ export const CartPanel: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }
                   onClick={() => setPaymentMethod(pm.id as PaymentMethod)}
                   className={`py-1.5 px-2 rounded-lg text-xs font-medium flex items-center justify-center gap-1.5 border transition-all cursor-pointer ${
                     isSelected
-                      ? 'border-[#6D5AE6] bg-[#6D5AE6]/5 text-[#6D5AE6] font-semibold ring-1 ring-[#6D5AE6]/30'
+                      ? 'border-[#16A34A] bg-[#16A34A]/5 text-[#16A34A] font-semibold ring-1 ring-[#16A34A]/30'
                       : 'border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:bg-zinc-50'
                   }`}
                 >
@@ -252,10 +252,10 @@ export const CartPanel: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }
             id="open-manual-payment-keypad-btn"
             type="button"
             onClick={() => setIsManualPaymentOpen(true)}
-            className="w-full py-2 px-3 rounded-xl text-xs font-semibold text-zinc-700 hover:text-[#6D5AE6] bg-zinc-50 hover:bg-[#6D5AE6]/5 border border-zinc-200 hover:border-[#6D5AE6]/30 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs"
+            className="w-full py-2 px-3 rounded-xl text-xs font-semibold text-zinc-700 hover:text-[#16A34A] bg-zinc-50 hover:bg-[#16A34A]/5 border border-zinc-200 hover:border-[#16A34A]/30 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs"
             title="Open big numbers keypad to tender cash or enter manual payment"
           >
-            <Calculator className="w-3.5 h-3.5 text-[#6D5AE6]" />
+            <Calculator className="w-3.5 h-3.5 text-[#16A34A]" />
             <span>Manual Payment (Big Numbers Keypad)</span>
           </button>
 
@@ -267,7 +267,7 @@ export const CartPanel: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }
             onClick={handleCharge}
             className={`w-full py-3 px-4 rounded-xl text-sm font-semibold text-white tracking-wide transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer ${
               cart.length > 0
-                ? 'bg-[#6D5AE6] hover:bg-[#5E4BD4] active:scale-[0.99]'
+                ? 'bg-[#16A34A] hover:bg-[#15803D] active:scale-[0.99]'
                 : 'bg-zinc-300 cursor-not-allowed opacity-60'
             }`}
           >

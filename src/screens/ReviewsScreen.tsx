@@ -100,7 +100,7 @@ export const ReviewsScreen: React.FC = () => {
                   )}
                 </div>
                 <div className="text-xs text-zinc-400 mt-0.5 font-medium">
-                  Item: <span className="text-[#6D5AE6] font-semibold">{rev.productName}</span>
+                  Item: <span className="text-[#16A34A] font-semibold">{rev.productName}</span>
                 </div>
               </div>
 

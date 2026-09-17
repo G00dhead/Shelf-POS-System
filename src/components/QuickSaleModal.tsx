@@ -139,7 +139,7 @@ export const QuickSaleModal: React.FC<QuickSaleModalProps> = ({
         {/* Header */}
         <div className="px-6 py-4 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/70">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center shrink-0">
               <PackagePlus className="w-5 h-5" />
             </div>
             <div>
@@ -183,7 +183,7 @@ export const QuickSaleModal: React.FC<QuickSaleModalProps> = ({
                 setDescription(e.target.value);
                 if (error) setError('');
               }}
-              className="w-full px-3.5 py-2 text-sm bg-white border border-zinc-300 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#6D5AE6] focus:ring-1 focus:ring-[#6D5AE6] transition-all"
+              className="w-full px-3.5 py-2 text-sm bg-white border border-zinc-300 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
             />
 
             {/* Quick Description Presets */}
@@ -226,7 +226,7 @@ export const QuickSaleModal: React.FC<QuickSaleModalProps> = ({
                     setPriceInput(e.target.value);
                     if (error) setError('');
                   }}
-                  className="w-full pl-8 pr-3 py-2 text-sm font-mono font-semibold bg-white border border-zinc-300 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#6D5AE6] focus:ring-1 focus:ring-[#6D5AE6] transition-all"
+                  className="w-full pl-8 pr-3 py-2 text-sm font-mono font-semibold bg-white border border-zinc-300 rounded-lg text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-all"
                 />
               </div>
 
@@ -237,7 +237,7 @@ export const QuickSaleModal: React.FC<QuickSaleModalProps> = ({
                     key={amt}
                     type="button"
                     onClick={() => handlePricePreset(amt)}
-                    className="flex-1 py-1 bg-zinc-50 hover:bg-[#6D5AE6]/10 hover:text-[#6D5AE6] border border-zinc-200 hover:border-[#6D5AE6]/40 rounded text-[10px] font-mono font-semibold text-zinc-600 transition-colors cursor-pointer text-center"
+                    className="flex-1 py-1 bg-zinc-50 hover:bg-[#16A34A]/10 hover:text-[#16A34A] border border-zinc-200 hover:border-[#16A34A]/40 rounded text-[10px] font-mono font-semibold text-zinc-600 transition-colors cursor-pointer text-center"
                   >
                     +{amt.toLocaleString()}
                   </button>
@@ -294,7 +294,7 @@ export const QuickSaleModal: React.FC<QuickSaleModalProps> = ({
                     onClick={() => setCategory(cat)}
                     className={`px-2.5 py-1.5 rounded-lg text-xs font-medium border text-left truncate transition-all cursor-pointer ${
                       isSelected
-                        ? 'bg-[#6D5AE6] text-white border-[#6D5AE6] shadow-2xs font-semibold'
+                        ? 'bg-[#16A34A] text-white border-[#16A34A] shadow-2xs font-semibold'
                         : 'bg-zinc-50 hover:bg-zinc-100 text-zinc-700 border-zinc-200'
                     }`}
                   >
@@ -333,7 +333,7 @@ export const QuickSaleModal: React.FC<QuickSaleModalProps> = ({
             <button
               type="submit"
               id="add-quick-sale-to-cart-btn"
-              className="px-5 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
+              className="px-5 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Add to Register</span>

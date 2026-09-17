@@ -43,7 +43,7 @@ export const CustomersScreen: React.FC = () => {
   const getTierBadge = (tier: string) => {
     switch (tier) {
       case 'Platinum':
-        return 'bg-purple-50 text-purple-700 border-purple-200';
+        return 'bg-emerald-50 text-emerald-700 border-emerald-200';
       case 'Gold':
         return 'bg-amber-50 text-amber-700 border-amber-200';
       case 'Silver':
@@ -74,13 +74,13 @@ export const CustomersScreen: React.FC = () => {
               placeholder="Search shoppers..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-50 focus:bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-200 focus:outline-none focus:border-[#6D5AE6]"
+              className="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-50 focus:bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-200 focus:outline-none focus:border-[#16A34A]"
             />
           </div>
 
           <button
             onClick={() => setIsAddOpen(true)}
-            className="px-3 py-1.5 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer"
+            className="px-3 py-1.5 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>Add Shopper</span>
@@ -199,7 +199,7 @@ export const CustomersScreen: React.FC = () => {
                   placeholder="e.g. Chioma Adeyemi"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -212,7 +212,7 @@ export const CustomersScreen: React.FC = () => {
                   placeholder="+234 803 123 4567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -225,7 +225,7 @@ export const CustomersScreen: React.FC = () => {
                   placeholder="chioma.a@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -239,7 +239,7 @@ export const CustomersScreen: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
                 >
                   Save Shopper
                 </button>

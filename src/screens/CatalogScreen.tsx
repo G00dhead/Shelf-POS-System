@@ -162,7 +162,7 @@ export const CatalogScreen: React.FC = () => {
             <h2 className="text-lg font-bold text-zinc-900 tracking-tight">
               Admin Supermarket Catalog & Stock
             </h2>
-            <span className="px-2 py-0.5 rounded-full bg-[#6D5AE6]/10 text-[#6D5AE6] font-mono font-semibold text-[11px]">
+            <span className="px-2 py-0.5 rounded-full bg-[#16A34A]/10 text-[#16A34A] font-mono font-semibold text-[11px]">
               {products.length} Items Live
             </span>
           </div>
@@ -173,7 +173,7 @@ export const CatalogScreen: React.FC = () => {
 
         <button
           onClick={handleOpenAdd}
-          className="px-3.5 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
+          className="px-3.5 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Product</span>
@@ -231,7 +231,7 @@ export const CatalogScreen: React.FC = () => {
             placeholder="Filter by name, barcode, SKU..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-50 focus:bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-200 focus:outline-none focus:border-[#6D5AE6]"
+            className="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-50 focus:bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-200 focus:outline-none focus:border-[#16A34A]"
           />
         </div>
       </div>
@@ -240,9 +240,9 @@ export const CatalogScreen: React.FC = () => {
       <div className="border border-zinc-200 rounded-xl overflow-hidden bg-white shadow-xs">
         {/* Batch Selection Banner */}
         {selectedProductIds.length > 0 && (
-          <div className="bg-[#6D5AE6]/10 border-b border-[#6D5AE6]/20 px-4 py-2 flex items-center justify-between text-xs animate-in fade-in duration-150">
-            <div className="flex items-center gap-2 font-medium text-[#6D5AE6]">
-              <span className="w-2 h-2 rounded-full bg-[#6D5AE6] animate-pulse" />
+          <div className="bg-[#16A34A]/10 border-b border-[#16A34A]/20 px-4 py-2 flex items-center justify-between text-xs animate-in fade-in duration-150">
+            <div className="flex items-center gap-2 font-medium text-[#16A34A]">
+              <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
               <span>
                 {selectedProductIds.length} item{selectedProductIds.length === 1 ? '' : 's'} selected
               </span>
@@ -253,7 +253,7 @@ export const CatalogScreen: React.FC = () => {
                   const first = products.find((p) => selectedProductIds.includes(p.id));
                   if (first) setBarcodeModalProduct(first);
                 }}
-                className="px-3 py-1.5 min-h-[36px] rounded-lg bg-[#6D5AE6] text-white font-medium hover:bg-[#5B48D9] flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer"
+                className="px-3 py-1.5 min-h-[36px] rounded-lg bg-[#16A34A] text-white font-medium hover:bg-[#15803D] flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5" />
                 <span>Print Shelf Tags</span>
@@ -287,7 +287,7 @@ export const CatalogScreen: React.FC = () => {
                           setSelectedProductIds([]);
                         }
                       }}
-                      className="w-4 h-4 rounded text-[#6D5AE6] border-zinc-300 focus:ring-[#6D5AE6] cursor-pointer"
+                      className="w-4 h-4 rounded text-[#16A34A] border-zinc-300 focus:ring-[#16A34A] cursor-pointer"
                       title="Select all items"
                     />
                   </label>
@@ -331,7 +331,7 @@ export const CatalogScreen: React.FC = () => {
                                 setSelectedProductIds((prev) => prev.filter((id) => id !== p.id));
                               }
                             }}
-                            className="w-4 h-4 rounded text-[#6D5AE6] border-zinc-300 focus:ring-[#6D5AE6] cursor-pointer"
+                            className="w-4 h-4 rounded text-[#16A34A] border-zinc-300 focus:ring-[#16A34A] cursor-pointer"
                           />
                         </label>
                       </td>
@@ -358,7 +358,7 @@ export const CatalogScreen: React.FC = () => {
                               </span>
                               <span className="text-zinc-300">•</span>
                               <span className="font-mono text-zinc-600 flex items-center gap-0.5">
-                                <BarcodeIcon className="w-3 h-3 text-[#6D5AE6] shrink-0" />
+                                <BarcodeIcon className="w-3 h-3 text-[#16A34A] shrink-0" />
                                 <span className="truncate">{p.barcode || p.sku}</span>
                               </span>
                               <span className="text-zinc-300 hidden sm:inline">•</span>
@@ -429,7 +429,7 @@ export const CatalogScreen: React.FC = () => {
                         <div className="hidden sm:flex items-center justify-end gap-1">
                           <button
                             onClick={() => setBarcodeModalProduct(p)}
-                            className="w-9 h-9 min-w-[36px] min-h-[36px] flex items-center justify-center text-zinc-400 hover:text-[#6D5AE6] hover:bg-[#6D5AE6]/10 rounded-lg transition-colors cursor-pointer"
+                            className="w-9 h-9 min-w-[36px] min-h-[36px] flex items-center justify-center text-zinc-400 hover:text-[#16A34A] hover:bg-[#16A34A]/10 rounded-lg transition-colors cursor-pointer"
                             title="Print Shelf Barcode Tag"
                           >
                             <Printer className="w-4 h-4" />
@@ -485,7 +485,7 @@ export const CatalogScreen: React.FC = () => {
                                   }}
                                   className="w-full px-3 py-2.5 min-h-[40px] flex items-center gap-2.5 text-zinc-700 hover:bg-zinc-50 font-medium transition-colors cursor-pointer"
                                 >
-                                  <Printer className="w-4 h-4 text-[#6D5AE6] shrink-0" />
+                                  <Printer className="w-4 h-4 text-[#16A34A] shrink-0" />
                                   <span>Print Shelf Tag</span>
                                 </button>
                                 <button
@@ -531,7 +531,7 @@ export const CatalogScreen: React.FC = () => {
           <div className="bg-white w-full max-w-xl rounded-2xl border border-zinc-200 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
             <div className="px-5 py-4 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/50 shrink-0">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center">
                   <Package className="w-4 h-4" />
                 </div>
                 <div>
@@ -561,7 +561,7 @@ export const CatalogScreen: React.FC = () => {
                   placeholder="e.g. Dangote Sugar 1kg or Dettol Cool Soap"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -574,7 +574,7 @@ export const CatalogScreen: React.FC = () => {
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value as Category)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6] bg-white"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A] bg-white"
                   >
                     <option value="Groceries">Groceries</option>
                     <option value="Toiletries & Personal Care">Toiletries & Personal Care</option>
@@ -595,7 +595,7 @@ export const CatalogScreen: React.FC = () => {
                     value={unit}
                     onChange={(e) => setUnit(e.target.value)}
                     placeholder="e.g. 1kg Pack, Carton (40)"
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                   />
                   <datalist id="preset-units">
                     {PRESET_UNITS.map((u) => (
@@ -615,7 +615,7 @@ export const CatalogScreen: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleGenerateBarcode}
-                      className="text-[10px] text-[#6D5AE6] hover:underline flex items-center gap-0.5"
+                      className="text-[10px] text-[#16A34A] hover:underline flex items-center gap-0.5"
                     >
                       <Sparkles className="w-2.5 h-2.5" />
                       Auto-generate
@@ -627,7 +627,7 @@ export const CatalogScreen: React.FC = () => {
                     value={barcode}
                     onChange={(e) => setBarcode(e.target.value)}
                     placeholder="6151100..."
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -641,7 +641,7 @@ export const CatalogScreen: React.FC = () => {
                     value={sku}
                     onChange={(e) => setSku(e.target.value)}
                     placeholder="GRO-GP-001"
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -658,7 +658,7 @@ export const CatalogScreen: React.FC = () => {
                     required
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -672,7 +672,7 @@ export const CatalogScreen: React.FC = () => {
                     required
                     value={cost}
                     onChange={(e) => setCost(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -685,7 +685,7 @@ export const CatalogScreen: React.FC = () => {
                     required
                     value={stock}
                     onChange={(e) => setStock(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -699,7 +699,7 @@ export const CatalogScreen: React.FC = () => {
                     required
                     value={reorderThreshold}
                     onChange={(e) => setReorderThreshold(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                     title="Alert triggers if stock drops below or equal to this count"
                   />
                 </div>
@@ -714,7 +714,7 @@ export const CatalogScreen: React.FC = () => {
                   type="url"
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -728,7 +728,7 @@ export const CatalogScreen: React.FC = () => {
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Key product attributes, ingredients, or brand origin..."
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -742,7 +742,7 @@ export const CatalogScreen: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
                 >
                   Create Product
                 </button>
@@ -758,7 +758,7 @@ export const CatalogScreen: React.FC = () => {
           <div className="bg-white w-full max-w-xl rounded-2xl border border-zinc-200 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
             <div className="px-5 py-4 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/50 shrink-0">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center">
                   <Edit2 className="w-4 h-4" />
                 </div>
                 <div>
@@ -788,7 +788,7 @@ export const CatalogScreen: React.FC = () => {
                   onChange={(e) =>
                     setEditingProduct({ ...editingProduct, name: e.target.value })
                   }
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -805,7 +805,7 @@ export const CatalogScreen: React.FC = () => {
                         category: e.target.value as Category
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6] bg-white"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A] bg-white"
                   >
                     <option value="Groceries">Groceries</option>
                     <option value="Toiletries & Personal Care">Toiletries & Personal Care</option>
@@ -827,7 +827,7 @@ export const CatalogScreen: React.FC = () => {
                       setEditingProduct({ ...editingProduct, unit: e.target.value })
                     }
                     placeholder="e.g. 1kg Pack"
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -843,7 +843,7 @@ export const CatalogScreen: React.FC = () => {
                     onChange={(e) =>
                       setEditingProduct({ ...editingProduct, barcode: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -857,7 +857,7 @@ export const CatalogScreen: React.FC = () => {
                     onChange={(e) =>
                       setEditingProduct({ ...editingProduct, sku: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -878,7 +878,7 @@ export const CatalogScreen: React.FC = () => {
                         price: parseFloat(e.target.value) || 0
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -897,7 +897,7 @@ export const CatalogScreen: React.FC = () => {
                         cost: parseFloat(e.target.value) || 0
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -915,7 +915,7 @@ export const CatalogScreen: React.FC = () => {
                         stock: parseInt(e.target.value, 10) || 0
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -934,7 +934,7 @@ export const CatalogScreen: React.FC = () => {
                         reorderThreshold: parseInt(e.target.value, 10) || 0
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                     title="Defines alert threshold in catalog background checks"
                   />
                 </div>
@@ -950,7 +950,7 @@ export const CatalogScreen: React.FC = () => {
                   onChange={(e) =>
                     setEditingProduct({ ...editingProduct, image: e.target.value })
                   }
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -964,7 +964,7 @@ export const CatalogScreen: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
                 >
                   Save Changes
                 </button>

@@ -59,7 +59,7 @@ export const TaxEngineScreen: React.FC = () => {
         <div className="p-4 rounded-xl border border-zinc-200 bg-white space-y-2">
           <span className="text-xs font-medium uppercase tracking-wider text-zinc-400">Tax Jurisdiction</span>
           <div className="flex items-center gap-2 pt-1">
-            <Landmark className="w-5 h-5 text-[#6D5AE6]" />
+            <Landmark className="w-5 h-5 text-[#16A34A]" />
             <div>
               <div className="text-xs font-bold text-zinc-900">New York State & NYC</div>
               <div className="text-[11px] text-zinc-400">Combined Local Rate (8.0%)</div>

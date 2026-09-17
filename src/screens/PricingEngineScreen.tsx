@@ -47,7 +47,7 @@ export const PricingEngineScreen: React.FC = () => {
       {/* Bulk Campaign Banner */}
       <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center shrink-0">
+          <div className="w-9 h-9 rounded-lg bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center shrink-0">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
@@ -64,7 +64,7 @@ export const PricingEngineScreen: React.FC = () => {
           <select
             value={bulkCategory}
             onChange={(e) => setBulkCategory(e.target.value)}
-            className="px-3 py-1.5 border border-zinc-200 rounded-lg text-xs bg-white text-zinc-800 focus:outline-none focus:border-[#6D5AE6]"
+            className="px-3 py-1.5 border border-zinc-200 rounded-lg text-xs bg-white text-zinc-800 focus:outline-none focus:border-[#16A34A]"
           >
             {CATEGORIES.map((c) => (
               <option key={c} value={c}>
@@ -87,7 +87,7 @@ export const PricingEngineScreen: React.FC = () => {
 
           <button
             onClick={handleBulkApply}
-            className="px-3 py-1.5 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+            className="px-3 py-1.5 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
           >
             Apply Rule
           </button>
@@ -188,7 +188,7 @@ export const PricingEngineScreen: React.FC = () => {
                               const val = parseFloat(e.target.value) || 0;
                               updateProductPrice(product.id, val);
                             }}
-                            className="w-24 px-2 py-1 border border-zinc-200 rounded text-xs font-mono font-medium focus:outline-none focus:border-[#6D5AE6]"
+                            className="w-24 px-2 py-1 border border-zinc-200 rounded text-xs font-mono font-medium focus:outline-none focus:border-[#16A34A]"
                           />
                         </div>
 
@@ -199,7 +199,7 @@ export const PricingEngineScreen: React.FC = () => {
                               const newPercent = e.target.value === 'percent' ? 10 : 0;
                               updateProductPrice(product.id, product.price, newPercent);
                             }}
-                            className="px-2 py-1 border border-zinc-200 rounded text-xs text-zinc-700 focus:outline-none focus:border-[#6D5AE6]"
+                            className="px-2 py-1 border border-zinc-200 rounded text-xs text-zinc-700 focus:outline-none focus:border-[#16A34A]"
                           >
                             <option value="none">No Discount</option>
                             <option value="percent">% Percentage</option>
@@ -216,7 +216,7 @@ export const PricingEngineScreen: React.FC = () => {
                                   const newP = parseInt(e.target.value, 10) || 0;
                                   updateProductPrice(product.id, product.price, newP);
                                 }}
-                                className="w-14 px-1.5 py-1 border border-zinc-200 rounded text-xs font-mono text-center focus:outline-none focus:border-[#6D5AE6]"
+                                className="w-14 px-1.5 py-1 border border-zinc-200 rounded text-xs font-mono text-center focus:outline-none focus:border-[#16A34A]"
                               />
                               <span className="text-[11px] text-zinc-400">%</span>
                             </div>

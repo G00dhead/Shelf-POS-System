@@ -54,7 +54,7 @@ export const MarketplaceScreen: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-start justify-between">
                   <div className="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center text-zinc-700">
-                    <Icon className="w-5 h-5 text-[#6D5AE6]" />
+                    <Icon className="w-5 h-5 text-[#16A34A]" />
                   </div>
                   <span className="text-[10px] uppercase font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">
                     {item.category}
@@ -97,7 +97,7 @@ export const MarketplaceScreen: React.FC = () => {
                     className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
                       item.connected
                         ? 'bg-zinc-100 hover:bg-red-50 text-zinc-700 hover:text-red-600 border border-zinc-200'
-                        : 'bg-[#6D5AE6] hover:bg-[#5E4BD4] text-white shadow-xs'
+                        : 'bg-[#16A34A] hover:bg-[#15803D] text-white shadow-xs'
                     }`}
                   >
                     {item.connected ? 'Disconnect' : 'Connect'}
@@ -154,7 +154,7 @@ export const MarketplaceScreen: React.FC = () => {
               <div className="flex justify-end pt-2">
                 <button
                   onClick={() => setSelectedConfig(null)}
-                  className="px-4 py-2 bg-[#6D5AE6] text-white font-semibold rounded-lg text-xs"
+                  className="px-4 py-2 bg-[#16A34A] text-white font-semibold rounded-lg text-xs"
                 >
                   Save Changes
                 </button>

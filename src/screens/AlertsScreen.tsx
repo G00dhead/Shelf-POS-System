@@ -126,7 +126,7 @@ export const AlertsScreen: React.FC = () => {
             className="px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:text-zinc-900 bg-zinc-100 hover:bg-zinc-200/80 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
             title="Force immediate catalog scan against all thresholds"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${isScanningInventory ? 'animate-spin text-[#6D5AE6]' : ''}`} />
+            <RefreshCw className={`w-3.5 h-3.5 ${isScanningInventory ? 'animate-spin text-[#16A34A]' : ''}`} />
             <span>{isScanningInventory ? 'Scanning...' : 'Scan Catalog Now'}</span>
           </button>
         </div>
@@ -241,7 +241,7 @@ export const AlertsScreen: React.FC = () => {
               placeholder="Filter by name, SKU, or category..."
               value={searchFilter}
               onChange={(e) => setSearchFilter(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 text-xs border border-zinc-200 rounded-lg focus:outline-none focus:border-[#6D5AE6] bg-white"
+              className="w-full pl-9 pr-3 py-1.5 text-xs border border-zinc-200 rounded-lg focus:outline-none focus:border-[#16A34A] bg-white"
             />
           </div>
         </div>
@@ -265,7 +265,7 @@ export const AlertsScreen: React.FC = () => {
               </p>
               <button
                 onClick={() => setCurrentScreen('catalog')}
-                className="mt-4 px-4 py-2 text-xs font-semibold text-[#6D5AE6] bg-[#6D5AE6]/10 hover:bg-[#6D5AE6]/20 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+                className="mt-4 px-4 py-2 text-xs font-semibold text-[#16A34A] bg-[#16A34A]/10 hover:bg-[#16A34A]/20 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
               >
                 <span>Browse Full Catalog</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -386,7 +386,7 @@ export const AlertsScreen: React.FC = () => {
                         <div className="flex items-center gap-1.5">
                           <button
                             onClick={() => handleQuickRestock(alert.productId, 20)}
-                            className="px-3 py-1.5 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5B48D9] rounded-lg transition-colors shadow-xs flex items-center gap-1 cursor-pointer"
+                            className="px-3 py-1.5 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors shadow-xs flex items-center gap-1 cursor-pointer"
                             title="Add +20 units immediately to catalog inventory"
                           >
                             <Plus className="w-3.5 h-3.5" />
@@ -411,7 +411,7 @@ export const AlertsScreen: React.FC = () => {
                             min="1"
                             value={tempThresholdValue}
                             onChange={(e) => setTempThresholdValue(e.target.value)}
-                            className="w-14 px-1.5 py-0.5 text-xs font-mono border border-zinc-200 rounded text-center focus:outline-none focus:border-[#6D5AE6]"
+                            className="w-14 px-1.5 py-0.5 text-xs font-mono border border-zinc-200 rounded text-center focus:outline-none focus:border-[#16A34A]"
                           />
                           <button
                             onClick={() => handleSaveThreshold(alert.productId)}
@@ -447,7 +447,7 @@ export const AlertsScreen: React.FC = () => {
 
                       <button
                         onClick={() => setCurrentScreen('catalog')}
-                        className="p-1.5 text-zinc-400 hover:text-[#6D5AE6] hover:bg-zinc-100 rounded-lg transition-colors cursor-pointer"
+                        className="p-1.5 text-zinc-400 hover:text-[#16A34A] hover:bg-zinc-100 rounded-lg transition-colors cursor-pointer"
                         title="View item in catalog"
                       >
                         <ExternalLink className="w-4 h-4" />

@@ -192,7 +192,7 @@ export const TopBar: React.FC = () => {
           >
             <ShoppingBag className="w-5 h-5" />
             {totalCartCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#6D5AE6] text-white text-[10px] font-bold min-w-4 h-4 px-1 rounded-full flex items-center justify-center shadow-xs">
+              <span className="absolute -top-1 -right-1 bg-[#16A34A] text-white text-[10px] font-bold min-w-4 h-4 px-1 rounded-full flex items-center justify-center shadow-xs">
                 {totalCartCount}
               </span>
             )}

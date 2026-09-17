@@ -255,7 +255,7 @@ export const PosScreen: React.FC = () => {
             placeholder="Search products by name, SKU, or scan barcode..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-10 py-2 text-xs bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-300 focus:outline-none focus:border-[#6D5AE6] focus:ring-1 focus:ring-[#6D5AE6] shadow-2xs transition-all"
+            className="w-full pl-10 pr-10 py-2 text-xs bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-300 focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] shadow-2xs transition-all"
           />
           {searchTerm && (
             <button
@@ -286,10 +286,10 @@ export const PosScreen: React.FC = () => {
           type="button"
           id="pos-quick-sale-btn"
           onClick={() => setIsQuickSaleOpen(true)}
-          className="px-3.5 py-2 bg-[#6D5AE6]/10 hover:bg-[#6D5AE6]/15 text-[#6D5AE6] border border-[#6D5AE6]/30 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs shrink-0"
+          className="px-3.5 py-2 bg-[#16A34A]/10 hover:bg-[#16A34A]/15 text-[#16A34A] border border-[#16A34A]/30 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs shrink-0"
           title="Add an ad-hoc or unlisted item"
         >
-          <PackagePlus className="w-4 h-4 text-[#6D5AE6]" />
+          <PackagePlus className="w-4 h-4 text-[#16A34A]" />
           <span>Quick Sale</span>
         </button>
 
@@ -301,7 +301,7 @@ export const PosScreen: React.FC = () => {
           className="px-3.5 py-2 bg-white hover:bg-zinc-100 text-zinc-700 border border-zinc-300 text-xs font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-2 shadow-2xs shrink-0"
           title="Open camera barcode scanner"
         >
-          <Camera className="w-4 h-4 text-[#6D5AE6]" />
+          <Camera className="w-4 h-4 text-[#16A34A]" />
           <span className="hidden sm:inline">Scan Camera</span>
         </button>
       </div>
@@ -317,7 +317,7 @@ export const PosScreen: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
                 isSelected
-                  ? 'bg-[#6D5AE6] text-white shadow-xs font-semibold'
+                  ? 'bg-[#16A34A] text-white shadow-xs font-semibold'
                   : 'bg-zinc-50 text-zinc-600 border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-100/80'
               }`}
             >
@@ -339,7 +339,7 @@ export const PosScreen: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSearchTerm('')}
-                className="mt-3 px-3 py-1.5 text-xs font-semibold text-[#6D5AE6] bg-[#6D5AE6]/10 rounded-lg hover:bg-[#6D5AE6]/20 transition-colors cursor-pointer"
+                className="mt-3 px-3 py-1.5 text-xs font-semibold text-[#16A34A] bg-[#16A34A]/10 rounded-lg hover:bg-[#16A34A]/20 transition-colors cursor-pointer"
               >
                 Clear Search Filter
               </button>
@@ -355,8 +355,8 @@ export const PosScreen: React.FC = () => {
                 <div
                   key={product.id}
                   id={`product-card-${product.id}`}
-                  className={`group relative bg-white border rounded-xl p-3 flex flex-col justify-between transition-all select-none hover:border-[#6D5AE6]/50 hover:shadow-xs ${
-                    cartItem ? 'border-[#6D5AE6]/50 ring-1 ring-[#6D5AE6]/30' : 'border-zinc-200'
+                  className={`group relative bg-white border rounded-xl p-3 flex flex-col justify-between transition-all select-none hover:border-[#16A34A]/50 hover:shadow-xs ${
+                    cartItem ? 'border-[#16A34A]/50 ring-1 ring-[#16A34A]/30' : 'border-zinc-200'
                   }`}
                 >
                   {/* Square Image container with rounded corners */}
@@ -383,7 +383,7 @@ export const PosScreen: React.FC = () => {
 
                     {/* In-cart count pill */}
                     {cartItem && (
-                      <span className="absolute top-2 right-2 bg-[#6D5AE6] text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs flex items-center gap-0.5">
+                      <span className="absolute top-2 right-2 bg-[#16A34A] text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs flex items-center gap-0.5">
                         <Check className="w-2.5 h-2.5 stroke-[3]" />
                         <span>{cartItem.quantity}</span>
                       </span>
@@ -398,8 +398,8 @@ export const PosScreen: React.FC = () => {
 
                     {/* Quick add feedback animation overlay */}
                     {isJustAdded && (
-                      <div className="absolute inset-0 bg-[#6D5AE6]/25 backdrop-blur-[1px] flex items-center justify-center animate-in fade-in zoom-in-75 duration-100">
-                        <div className="bg-white text-[#6D5AE6] p-2 rounded-full shadow-md font-bold">
+                      <div className="absolute inset-0 bg-[#16A34A]/25 backdrop-blur-[1px] flex items-center justify-center animate-in fade-in zoom-in-75 duration-100">
+                        <div className="bg-white text-[#16A34A] p-2 rounded-full shadow-md font-bold">
                           <Plus className="w-5 h-5 stroke-[3]" />
                         </div>
                       </div>
@@ -412,7 +412,7 @@ export const PosScreen: React.FC = () => {
                       onClick={() => handleProductClick(product)}
                       className="cursor-pointer"
                     >
-                      <h3 className="text-xs font-bold text-zinc-900 group-hover:text-[#6D5AE6] transition-colors line-clamp-1 leading-tight">
+                      <h3 className="text-xs font-bold text-zinc-900 group-hover:text-[#16A34A] transition-colors line-clamp-1 leading-tight">
                         {product.name}
                       </h3>
                       <p className="text-[10px] text-zinc-400 truncate">
@@ -433,7 +433,7 @@ export const PosScreen: React.FC = () => {
                             e.stopPropagation();
                             setActiveBarcodeTagProduct(product);
                           }}
-                          className="p-1 text-zinc-400 hover:text-[#6D5AE6] hover:bg-[#6D5AE6]/10 rounded transition-colors"
+                          className="p-1 text-zinc-400 hover:text-[#16A34A] hover:bg-[#16A34A]/10 rounded transition-colors"
                           title={`View & Print Barcode Label for ${product.name}`}
                           aria-label="View barcode"
                         >
@@ -442,7 +442,7 @@ export const PosScreen: React.FC = () => {
                         <button
                           type="button"
                           onClick={() => handleProductClick(product)}
-                          className="p-1 text-zinc-500 hover:text-white hover:bg-[#6D5AE6] rounded transition-colors"
+                          className="p-1 text-zinc-500 hover:text-white hover:bg-[#16A34A] rounded transition-colors"
                           title="Add to register"
                         >
                           <Plus className="w-3.5 h-3.5" />
@@ -463,7 +463,7 @@ export const PosScreen: React.FC = () => {
           <button
             id="mobile-view-cart-bar-btn"
             onClick={() => setMobileCartOpen(true)}
-            className="w-full py-3 px-4 rounded-xl bg-[#6D5AE6] text-white text-sm font-semibold flex items-center justify-between shadow-md active:scale-[0.99] transition-transform cursor-pointer"
+            className="w-full py-3 px-4 rounded-xl bg-[#16A34A] text-white text-sm font-semibold flex items-center justify-between shadow-md active:scale-[0.99] transition-transform cursor-pointer"
           >
             <div className="flex items-center gap-2">
               <span className="bg-white/20 p-1 rounded-lg">

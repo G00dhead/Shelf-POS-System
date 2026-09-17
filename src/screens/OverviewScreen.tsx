@@ -83,7 +83,7 @@ export const OverviewScreen: React.FC = () => {
             <span className="text-xs font-medium uppercase tracking-wider text-zinc-400">
               Today's Revenue
             </span>
-            <div className="w-8 h-8 rounded-lg bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center">
               <Banknote className="w-4 h-4" />
             </div>
           </div>
@@ -240,8 +240,8 @@ export const OverviewScreen: React.FC = () => {
                         style={{ height: `${bar.height}%` }}
                         className={`w-full rounded-t-lg rounded-b-xs transition-all duration-300 ${
                           isHovered
-                            ? 'bg-[#6D5AE6] shadow-sm'
-                            : 'bg-[#6D5AE6]/20 group-hover:bg-[#6D5AE6]/35'
+                            ? 'bg-[#16A34A] shadow-sm'
+                            : 'bg-[#16A34A]/20 group-hover:bg-[#16A34A]/35'
                         }`}
                       />
                     </div>
@@ -280,7 +280,7 @@ export const OverviewScreen: React.FC = () => {
               <span className="text-zinc-300">•</span>
               <button
                 onClick={() => setCurrentScreen('catalog')}
-                className="text-xs font-semibold text-[#6D5AE6] hover:underline cursor-pointer"
+                className="text-xs font-semibold text-[#16A34A] hover:underline cursor-pointer"
               >
                 Catalog
               </button>
@@ -351,8 +351,8 @@ export const OverviewScreen: React.FC = () => {
           </div>
 
           {/* Automated Replenishment Banner Matching Image 2 */}
-          <div className="p-3 bg-[#6D5AE6]/5 border border-[#6D5AE6]/20 rounded-xl text-xs flex items-center gap-2 mt-auto">
-            <div className="w-2 h-2 rounded-full bg-[#6D5AE6] animate-pulse shrink-0" />
+          <div className="p-3 bg-[#16A34A]/5 border border-[#16A34A]/20 rounded-xl text-xs flex items-center gap-2 mt-auto">
+            <div className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse shrink-0" />
             <p className="text-zinc-600 text-[11px] leading-tight">
               <strong className="text-zinc-900 font-semibold">Automated Replenishment:</strong>{' '}
               Purchase order drafts ready for supplier dispatch.
@@ -372,7 +372,7 @@ export const OverviewScreen: React.FC = () => {
           </div>
           <button
             onClick={() => setCurrentScreen('orders')}
-            className="text-xs font-medium text-[#6D5AE6] hover:underline cursor-pointer inline-flex items-center gap-1"
+            className="text-xs font-medium text-[#16A34A] hover:underline cursor-pointer inline-flex items-center gap-1"
           >
             <span>View all queue</span>
             <ArrowRight className="w-3 h-3" />
@@ -465,7 +465,7 @@ export const OverviewScreen: React.FC = () => {
                     <td className="py-3 px-2 text-right w-11 shrink-0">
                       <button
                         onClick={() => setSelectedOrderForModal(order)}
-                        className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center text-zinc-400 hover:text-[#6D5AE6] hover:bg-[#6D5AE6]/10 rounded-lg transition-colors cursor-pointer ml-auto"
+                        className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center text-zinc-400 hover:text-[#16A34A] hover:bg-[#16A34A]/10 rounded-lg transition-colors cursor-pointer ml-auto"
                         title="View Full Receipt"
                         aria-label="View Full Receipt"
                       >

@@ -105,7 +105,7 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
         {/* Modal Header */}
         <div className="px-5 py-4 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/50 shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center">
               <Scan className="w-4 h-4" />
             </div>
             <div>
@@ -220,12 +220,12 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
                 value={manualCode}
                 onChange={(e) => setManualCode(e.target.value)}
                 placeholder="Enter 13-digit EAN barcode or SKU..."
-                className="w-full px-3.5 py-2 text-xs font-mono border border-zinc-200 rounded-lg focus:outline-none focus:border-[#6D5AE6] bg-zinc-50 focus:bg-white"
+                className="w-full px-3.5 py-2 text-xs font-mono border border-zinc-200 rounded-lg focus:outline-none focus:border-[#16A34A] bg-zinc-50 focus:bg-white"
               />
             </div>
             <button
               type="submit"
-              className="px-4 py-2 text-xs font-bold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer shrink-0"
+              className="px-4 py-2 text-xs font-bold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer shrink-0"
             >
               Scan
             </button>
@@ -247,7 +247,7 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
                 <button
                   key={prod.id}
                   onClick={() => handleExecuteScan(prod.barcode || prod.sku)}
-                  className="flex items-center gap-2 p-2 border border-zinc-200 hover:border-[#6D5AE6] hover:bg-[#6D5AE6]/5 rounded-lg text-left transition-all cursor-pointer group"
+                  className="flex items-center gap-2 p-2 border border-zinc-200 hover:border-[#16A34A] hover:bg-[#16A34A]/5 rounded-lg text-left transition-all cursor-pointer group"
                 >
                   <img
                     src={prod.image || DEFAULT_PRODUCT_IMAGE}
@@ -259,7 +259,7 @@ export const BarcodeScannerModal: React.FC<BarcodeScannerModalProps> = ({
                     className="w-8 h-8 rounded object-cover bg-zinc-100 border border-zinc-200 shrink-0"
                   />
                   <div className="min-w-0 flex-1">
-                    <div className="text-xs font-semibold text-zinc-900 group-hover:text-[#6D5AE6] truncate">
+                    <div className="text-xs font-semibold text-zinc-900 group-hover:text-[#16A34A] truncate">
                       {prod.name}
                     </div>
                     <div className="text-[10px] text-zinc-500 font-mono">

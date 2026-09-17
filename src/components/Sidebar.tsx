@@ -122,7 +122,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
           <div className="flex flex-col items-center gap-2 mb-4">
             <button
               onClick={() => handleSelectScreen('pos')}
-              className="w-9 h-9 rounded-lg bg-[#6D5AE6] flex items-center justify-center text-white font-bold text-sm shadow-xs hover:bg-[#5E4BD4] transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-lg bg-[#16A34A] flex items-center justify-center text-white font-bold text-sm shadow-xs hover:bg-[#15803D] transition-colors cursor-pointer"
               title="Shelf POS (Switch to POS)"
               aria-label="Shelf POS"
             >
@@ -131,7 +131,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
             <button
               id="sidebar-expand-btn"
               onClick={toggleSidebar}
-              className="p-1.5 text-zinc-400 hover:text-[#6D5AE6] hover:bg-[#6D5AE6]/10 rounded-lg transition-colors cursor-pointer"
+              className="p-1.5 text-zinc-400 hover:text-[#16A34A] hover:bg-[#16A34A]/10 rounded-lg transition-colors cursor-pointer"
               title="Expand sidebar (Ctrl+B)"
               aria-label="Expand sidebar"
             >
@@ -144,11 +144,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
               className="flex items-center gap-2.5 cursor-pointer group min-w-0"
               onClick={() => handleSelectScreen('pos')}
             >
-              <div className="w-8 h-8 rounded-lg bg-[#6D5AE6] flex items-center justify-center text-white font-bold text-sm shadow-sm shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-[#16A34A] flex items-center justify-center text-white font-bold text-sm shadow-sm shrink-0">
                 S
               </div>
               <div className="min-w-0">
-                <div className="font-semibold text-zinc-900 text-sm tracking-tight leading-none group-hover:text-[#6D5AE6] transition-colors truncate">
+                <div className="font-semibold text-zinc-900 text-sm tracking-tight leading-none group-hover:text-[#16A34A] transition-colors truncate">
                   Shelf POS
                 </div>
                 <div className="text-[11px] text-zinc-400 font-normal leading-tight mt-0.5 truncate">
@@ -209,7 +209,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
                             : 'justify-between px-2.5 py-1.5'
                         } rounded-lg text-xs font-medium transition-colors cursor-pointer relative ${
                           isActive
-                            ? 'bg-[#6D5AE6] text-white shadow-xs'
+                            ? 'bg-[#16A34A] text-white shadow-xs'
                             : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100/70'
                         }`}
                         title={isCollapsed ? item.label : undefined}
@@ -272,7 +272,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
               className="relative cursor-pointer group"
               title="Active Staff: Goodhead Golly (Head Cashier) - Online"
             >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#6D5AE6] to-[#8B7CF8] text-white font-bold text-xs flex items-center justify-center ring-1 ring-zinc-200 shadow-2xs group-hover:ring-[#6D5AE6] transition-all select-none">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#16A34A] to-[#8B7CF8] text-white font-bold text-xs flex items-center justify-center ring-1 ring-zinc-200 shadow-2xs group-hover:ring-[#16A34A] transition-all select-none">
                 GG
               </div>
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white" />
@@ -282,13 +282,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ forceExpanded = false }) => {
           <div className="flex items-center justify-between p-1.5 rounded-lg hover:bg-zinc-50 transition-colors cursor-pointer group">
             <div className="flex items-center gap-2.5 min-w-0">
               <div className="relative shrink-0">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#6D5AE6] to-[#8B7CF8] text-white font-bold text-xs flex items-center justify-center ring-1 ring-zinc-200 shadow-2xs select-none">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#16A34A] to-[#8B7CF8] text-white font-bold text-xs flex items-center justify-center ring-1 ring-zinc-200 shadow-2xs select-none">
                   GG
                 </div>
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white" />
               </div>
               <div className="truncate">
-                <div className="text-xs font-semibold text-zinc-900 truncate group-hover:text-[#6D5AE6] transition-colors leading-tight">
+                <div className="text-xs font-semibold text-zinc-900 truncate group-hover:text-[#16A34A] transition-colors leading-tight">
                   Goodhead Golly
                 </div>
                 <div className="text-[10px] text-zinc-400 truncate leading-tight mt-0.5">

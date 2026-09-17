@@ -130,7 +130,7 @@ export const BarcodeLabelModal: React.FC<BarcodeLabelProps> = ({
 
         {/* Realistic Retail Shelf Tag */}
         <div className="border-2 border-dashed border-zinc-300 rounded-xl p-4 bg-zinc-50 flex flex-col items-center text-center space-y-2">
-          <div className="text-[10px] font-bold text-[#6D5AE6] uppercase tracking-widest">
+          <div className="text-[10px] font-bold text-[#16A34A] uppercase tracking-widest">
             Shelf
           </div>
           <div className="text-xs font-bold text-zinc-900 line-clamp-2">
@@ -155,7 +155,7 @@ export const BarcodeLabelModal: React.FC<BarcodeLabelProps> = ({
         <div className="flex gap-2">
           <button
             onClick={() => window.print()}
-            className="flex-1 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-xs"
+            className="flex-1 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-xs"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Print Shelf Label</span>

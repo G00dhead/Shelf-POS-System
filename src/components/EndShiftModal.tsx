@@ -36,7 +36,7 @@ export const EndShiftModal: React.FC = () => {
       >
         <div className="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <LogOut className="w-5 h-5 text-[#6D5AE6]" />
+            <LogOut className="w-5 h-5 text-[#16A34A]" />
             <h3 className="text-sm font-semibold text-zinc-900">
               End Shift & Reconcile Register Drawer
             </h3>
@@ -74,7 +74,7 @@ export const EndShiftModal: React.FC = () => {
             </div>
             <div className="pt-2 border-t border-zinc-200 flex justify-between font-semibold text-zinc-900">
               <span>Expected in Drawer</span>
-              <span className="font-mono text-[#6D5AE6]">
+              <span className="font-mono text-[#16A34A]">
                 {formatMoney(drawerAmount, settings.currency)}
               </span>
             </div>
@@ -93,7 +93,7 @@ export const EndShiftModal: React.FC = () => {
                 step="50"
                 value={actualCount}
                 onChange={(e) => setActualCount(e.target.value)}
-                className="w-full pl-8 pr-4 py-2 border border-zinc-200 rounded-xl text-sm font-mono font-medium text-zinc-900 focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full pl-8 pr-4 py-2 border border-zinc-200 rounded-xl text-sm font-mono font-medium text-zinc-900 focus:outline-none focus:border-[#16A34A]"
               />
             </div>
           </div>
@@ -139,7 +139,7 @@ export const EndShiftModal: React.FC = () => {
           <button
             onClick={handleCloseShift}
             disabled={reconciled}
-            className="px-4 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
+            className="px-4 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
           >
             {reconciled ? (
               <>

@@ -144,7 +144,7 @@ export const RevenueDeskScreen: React.FC = () => {
                 <div className="w-full max-w-[48px] bg-zinc-100 rounded-t-lg overflow-hidden flex items-end h-32">
                   <div
                     style={{ height: `${heightPercent}%` }}
-                    className="w-full bg-[#6D5AE6] hover:bg-[#5E4BD4] transition-all rounded-t-lg"
+                    className="w-full bg-[#16A34A] hover:bg-[#15803D] transition-all rounded-t-lg"
                   />
                 </div>
                 <span className="text-[11px] text-zinc-500 font-medium">
@@ -203,7 +203,7 @@ export const RevenueDeskScreen: React.FC = () => {
                     ${item.revenue.toFixed(2)}
                   </td>
                   <td className="py-3 px-3 text-right">
-                    <span className="px-2 py-0.5 rounded-full bg-[#6D5AE6]/10 text-[#6D5AE6] font-bold text-[10px]">
+                    <span className="px-2 py-0.5 rounded-full bg-[#16A34A]/10 text-[#16A34A] font-bold text-[10px]">
                       {item.share}
                     </span>
                   </td>

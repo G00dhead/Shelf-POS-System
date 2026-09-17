@@ -30,7 +30,7 @@ export const LiveMonitorScreen: React.FC = () => {
         <div className="p-4 rounded-xl border border-zinc-200 bg-white space-y-2">
           <span className="text-xs font-medium text-zinc-400 uppercase">Active Terminals</span>
           <div className="text-base font-bold text-zinc-900 flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-[#6D5AE6]" />
+            <Cpu className="w-4 h-4 text-[#16A34A]" />
             <span>Terminal 01 • Main</span>
           </div>
           <p className="text-[11px] text-zinc-400">Station Lane #01 (Jordan M.)</p>

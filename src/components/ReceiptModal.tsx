@@ -105,7 +105,7 @@ export const ReceiptModal: React.FC<{ order: Order; onClose: () => void }> = ({
             )}
             <div className="flex justify-between items-baseline pt-2 border-t border-zinc-100 text-sm font-bold text-zinc-900">
               <span>Total Paid ({order.paymentMethod.toUpperCase()})</span>
-              <span className="font-mono text-base text-[#6D5AE6]">
+              <span className="font-mono text-base text-[#16A34A]">
                 {formatMoney(order.total, settings.currency)}
               </span>
             </div>
@@ -161,7 +161,7 @@ export const ReceiptModal: React.FC<{ order: Order; onClose: () => void }> = ({
           </button>
           <button
             onClick={onClose}
-            className="flex items-center justify-center gap-1.5 py-2 px-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+            className="flex items-center justify-center gap-1.5 py-2 px-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
           >
             <ShoppingBag className="w-3.5 h-3.5" />
             <span>New Sale</span>

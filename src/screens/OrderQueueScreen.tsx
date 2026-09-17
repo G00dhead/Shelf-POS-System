@@ -134,7 +134,7 @@ export const OrderQueueScreen: React.FC = () => {
               placeholder="Search order #, customer..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-50 focus:bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-200 focus:outline-none focus:border-[#6D5AE6] transition-colors"
+              className="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-50 focus:bg-white text-zinc-900 placeholder:text-zinc-400 rounded-lg border border-zinc-200 focus:outline-none focus:border-[#16A34A] transition-colors"
             />
           </div>
 
@@ -184,7 +184,7 @@ export const OrderQueueScreen: React.FC = () => {
             onClick={() => setActiveTab(tab.id)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap ${
               activeTab === tab.id
-                ? 'bg-[#6D5AE6] text-white shadow-xs'
+                ? 'bg-[#16A34A] text-white shadow-xs'
                 : 'bg-white text-zinc-600 hover:bg-zinc-100/70 border border-zinc-200'
             }`}
           >
@@ -304,7 +304,7 @@ export const OrderQueueScreen: React.FC = () => {
                       {order.status === 'held' && (
                         <button
                           onClick={() => resumeOrder(order.id)}
-                          className="min-h-[38px] px-3.5 py-1.5 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
+                          className="min-h-[38px] px-3.5 py-1.5 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
                           title="Resume this sale in POS"
                         >
                           <Play className="w-3.5 h-3.5 fill-current" />

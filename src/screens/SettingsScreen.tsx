@@ -153,7 +153,7 @@ export const SettingsScreen: React.FC = () => {
       <div className="p-5 rounded-xl border border-zinc-200 bg-white space-y-4">
         <div className="flex items-center justify-between pb-2 border-b border-zinc-100">
           <div className="flex items-center gap-2">
-            <Package className="w-4 h-4 text-[#6D5AE6]" />
+            <Package className="w-4 h-4 text-[#16A34A]" />
             <div>
               <h3 className="text-sm font-bold text-zinc-900">
                 Admin Product Management (Add / Edit Products)
@@ -167,7 +167,7 @@ export const SettingsScreen: React.FC = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={handleOpenAddProduct}
-              className="px-3 py-1.5 bg-[#6D5AE6]/10 text-[#6D5AE6] hover:bg-[#6D5AE6]/20 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
+              className="px-3 py-1.5 bg-[#16A34A]/10 text-[#16A34A] hover:bg-[#16A34A]/20 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add Product</span>
@@ -231,7 +231,7 @@ export const SettingsScreen: React.FC = () => {
                   <td className="py-2.5 px-3 text-right">
                     <button
                       onClick={() => setEditingProduct(p)}
-                      className="px-2.5 py-1 text-xs font-medium text-[#6D5AE6] hover:bg-[#6D5AE6]/10 rounded-md transition-colors inline-flex items-center gap-1 cursor-pointer"
+                      className="px-2.5 py-1 text-xs font-medium text-[#16A34A] hover:bg-[#16A34A]/10 rounded-md transition-colors inline-flex items-center gap-1 cursor-pointer"
                     >
                       <Edit2 className="w-3 h-3" />
                       <span>Edit Product</span>
@@ -246,7 +246,7 @@ export const SettingsScreen: React.FC = () => {
         <div className="pt-2 text-right">
           <button
             onClick={() => setCurrentScreen('catalog')}
-            className="text-xs text-[#6D5AE6] hover:underline font-semibold inline-flex items-center gap-1"
+            className="text-xs text-[#16A34A] hover:underline font-semibold inline-flex items-center gap-1"
           >
             View all {products.length} products in full catalog table
             <ArrowRight className="w-3.5 h-3.5" />
@@ -258,7 +258,7 @@ export const SettingsScreen: React.FC = () => {
       <form onSubmit={handleSaveSettings} className="space-y-6">
         <div className="p-5 rounded-xl border border-zinc-200 bg-white space-y-4">
           <div className="flex items-center gap-2 pb-2 border-b border-zinc-100">
-            <Building className="w-4 h-4 text-[#6D5AE6]" />
+            <Building className="w-4 h-4 text-[#16A34A]" />
             <h3 className="text-sm font-bold text-zinc-900">Supermarket Profile</h3>
           </div>
 
@@ -271,7 +271,7 @@ export const SettingsScreen: React.FC = () => {
                 type="text"
                 value={storeName}
                 onChange={(e) => setStoreName(e.target.value)}
-                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
               />
             </div>
 
@@ -283,7 +283,7 @@ export const SettingsScreen: React.FC = () => {
                 type="text"
                 value={tagline}
                 onChange={(e) => setTagline(e.target.value)}
-                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
               />
             </div>
 
@@ -295,7 +295,7 @@ export const SettingsScreen: React.FC = () => {
                 type="text"
                 value={cashierName}
                 onChange={(e) => setCashierName(e.target.value)}
-                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
               />
             </div>
 
@@ -316,7 +316,7 @@ export const SettingsScreen: React.FC = () => {
         {/* Register & Financial Settings */}
         <div className="p-5 rounded-xl border border-zinc-200 bg-white space-y-4">
           <div className="flex items-center gap-2 pb-2 border-b border-zinc-100">
-            <DollarSign className="w-4 h-4 text-[#6D5AE6]" />
+            <DollarSign className="w-4 h-4 text-[#16A34A]" />
             <h3 className="text-sm font-bold text-zinc-900">Register & Tax Rules</h3>
           </div>
 
@@ -330,7 +330,7 @@ export const SettingsScreen: React.FC = () => {
                 step="0.1"
                 value={defaultTaxRate}
                 onChange={(e) => setDefaultTaxRate(e.target.value)}
-                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
               />
             </div>
 
@@ -343,7 +343,7 @@ export const SettingsScreen: React.FC = () => {
                 step="500"
                 value={startingFloat}
                 onChange={(e) => setStartingFloat(e.target.value)}
-                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
               />
             </div>
           </div>
@@ -357,7 +357,7 @@ export const SettingsScreen: React.FC = () => {
                 rows={2}
                 value={receiptHeader}
                 onChange={(e) => setReceiptHeader(e.target.value)}
-                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
               />
             </div>
 
@@ -369,7 +369,7 @@ export const SettingsScreen: React.FC = () => {
                 rows={2}
                 value={receiptFooter}
                 onChange={(e) => setReceiptFooter(e.target.value)}
-                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
               />
             </div>
           </div>
@@ -377,7 +377,7 @@ export const SettingsScreen: React.FC = () => {
           <div className="pt-2 flex justify-end">
             <button
               type="submit"
-              className="px-4 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+              className="px-4 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
             >
               Save System Settings
             </button>
@@ -389,7 +389,7 @@ export const SettingsScreen: React.FC = () => {
       <div className="p-5 rounded-xl border border-zinc-200 bg-white space-y-4">
         <div className="flex items-center justify-between pb-2 border-b border-zinc-100">
           <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-[#6D5AE6]" />
+            <Users className="w-4 h-4 text-[#16A34A]" />
             <h3 className="text-sm font-bold text-zinc-900">Staff Accounts & Cashier Shifts</h3>
           </div>
           <span className="text-xs text-zinc-400">
@@ -424,7 +424,7 @@ export const SettingsScreen: React.FC = () => {
                           className="w-8 h-8 rounded-full object-cover border border-zinc-200 shrink-0"
                         />
                       ) : (
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#6D5AE6] to-[#8B7CF8] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-2xs select-none">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#16A34A] to-[#8B7CF8] text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-2xs select-none">
                           {member.name
                             .split(' ')
                             .map((n) => n[0])
@@ -477,7 +477,7 @@ export const SettingsScreen: React.FC = () => {
           <div className="bg-white w-full max-w-xl rounded-2xl border border-zinc-200 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
             <div className="px-5 py-4 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/50 shrink-0">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center">
                   <Package className="w-4 h-4" />
                 </div>
                 <div>
@@ -506,7 +506,7 @@ export const SettingsScreen: React.FC = () => {
                   placeholder="e.g. Golden Penny Semovita 2kg"
                   value={newProdName}
                   onChange={(e) => setNewProdName(e.target.value)}
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -518,7 +518,7 @@ export const SettingsScreen: React.FC = () => {
                   <select
                     value={newProdCategory}
                     onChange={(e) => setNewProdCategory(e.target.value as Category)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6] bg-white"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A] bg-white"
                   >
                     <option value="Groceries">Groceries</option>
                     <option value="Toiletries & Personal Care">Toiletries & Personal Care</option>
@@ -538,7 +538,7 @@ export const SettingsScreen: React.FC = () => {
                     value={newProdUnit}
                     onChange={(e) => setNewProdUnit(e.target.value)}
                     placeholder="e.g. 2kg Bag, Pack of 3"
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -556,7 +556,7 @@ export const SettingsScreen: React.FC = () => {
                           `6151100${Math.floor(100000 + Math.random() * 900000)}`
                         )
                       }
-                      className="text-[10px] text-[#6D5AE6] hover:underline flex items-center gap-0.5"
+                      className="text-[10px] text-[#16A34A] hover:underline flex items-center gap-0.5"
                     >
                       <Sparkles className="w-2.5 h-2.5" />
                       Auto-generate
@@ -567,7 +567,7 @@ export const SettingsScreen: React.FC = () => {
                     required
                     value={newProdBarcode}
                     onChange={(e) => setNewProdBarcode(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -580,7 +580,7 @@ export const SettingsScreen: React.FC = () => {
                     required
                     value={newProdSku}
                     onChange={(e) => setNewProdSku(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -596,7 +596,7 @@ export const SettingsScreen: React.FC = () => {
                     required
                     value={newProdPrice}
                     onChange={(e) => setNewProdPrice(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -610,7 +610,7 @@ export const SettingsScreen: React.FC = () => {
                     required
                     value={newProdCost}
                     onChange={(e) => setNewProdCost(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -623,7 +623,7 @@ export const SettingsScreen: React.FC = () => {
                     required
                     value={newProdStock}
                     onChange={(e) => setNewProdStock(e.target.value)}
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -638,7 +638,7 @@ export const SettingsScreen: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
                 >
                   Add Product
                 </button>
@@ -654,7 +654,7 @@ export const SettingsScreen: React.FC = () => {
           <div className="bg-white w-full max-w-xl rounded-2xl border border-zinc-200 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
             <div className="px-5 py-4 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/50 shrink-0">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#6D5AE6]/10 text-[#6D5AE6] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center">
                   <Edit2 className="w-4 h-4" />
                 </div>
                 <div>
@@ -684,7 +684,7 @@ export const SettingsScreen: React.FC = () => {
                   onChange={(e) =>
                     setEditingProduct({ ...editingProduct, name: e.target.value })
                   }
-                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                  className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                 />
               </div>
 
@@ -701,7 +701,7 @@ export const SettingsScreen: React.FC = () => {
                         category: e.target.value as Category
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6] bg-white"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A] bg-white"
                   >
                     <option value="Groceries">Groceries</option>
                     <option value="Toiletries & Personal Care">Toiletries & Personal Care</option>
@@ -722,7 +722,7 @@ export const SettingsScreen: React.FC = () => {
                     onChange={(e) =>
                       setEditingProduct({ ...editingProduct, unit: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -738,7 +738,7 @@ export const SettingsScreen: React.FC = () => {
                     onChange={(e) =>
                       setEditingProduct({ ...editingProduct, barcode: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -752,7 +752,7 @@ export const SettingsScreen: React.FC = () => {
                     onChange={(e) =>
                       setEditingProduct({ ...editingProduct, sku: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -773,7 +773,7 @@ export const SettingsScreen: React.FC = () => {
                         price: parseFloat(e.target.value) || 0
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -792,7 +792,7 @@ export const SettingsScreen: React.FC = () => {
                         cost: parseFloat(e.target.value) || 0
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
 
@@ -810,7 +810,7 @@ export const SettingsScreen: React.FC = () => {
                         stock: parseInt(e.target.value, 10) || 0
                       })
                     }
-                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#6D5AE6]"
+                    className="w-full px-3 py-2 border border-zinc-200 rounded-lg text-xs font-mono focus:outline-none focus:border-[#16A34A]"
                   />
                 </div>
               </div>
@@ -825,7 +825,7 @@ export const SettingsScreen: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-[#6D5AE6] hover:bg-[#5E4BD4] rounded-lg transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-[#16A34A] hover:bg-[#15803D] rounded-lg transition-colors cursor-pointer"
                 >
                   Save Changes
                 </button>

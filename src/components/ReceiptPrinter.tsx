@@ -21,6 +21,8 @@ export type ReceiptPrinterRootProps = Omit<
   feedMotion?: ReceiptFeedMotion;
   /** Current state of the printer. */
   stage: ReceiptPrinterStage;
+  /** When true (default), ensures thermal printer animation runs on mobile devices regardless of OS battery-saver or reduce-motion flags. */
+  forceMotion?: boolean;
 };
 
 export type ReceiptPrinterMachineProps = ComponentPropsWithoutRef<'div'>;
@@ -112,13 +114,15 @@ function ReceiptPrinterRoot({
   className = '',
   feedMotion = 'stepped',
   stage,
+  forceMotion = true,
   ...props
 }: ReceiptPrinterRootProps) {
   const shouldReduceMotion = useReducedMotion();
+  const shouldMove = animate && (forceMotion ? true : !shouldReduceMotion);
   const context: ReceiptPrinterContextValue = {
     animate,
     feedMotion,
-    shouldMove: animate && !shouldReduceMotion,
+    shouldMove,
     stage,
   };
 
@@ -337,7 +341,7 @@ function ReceiptPrinterOutput({
                 : 'translateY(calc(-100% + 2px))',
         }}
         aria-hidden={stage !== 'complete'}
-        className="relative isolate"
+        className="relative isolate will-change-transform transform-gpu"
         initial={false}
         transition={{
           opacity: { duration: animate ? 0.16 : 0, ease: easeOut },

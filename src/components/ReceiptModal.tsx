@@ -17,6 +17,9 @@ const playPrinterSound = () => {
       (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
     if (!AudioContextClass) return;
     const ctx = new AudioContextClass();
+    if (ctx.state === 'suspended') {
+      ctx.resume().catch(() => {});
+    }
 
     // Small series of rapid clicks/stepper pulses
     const pulseCount = 10;
@@ -84,14 +87,14 @@ export const ReceiptModal: React.FC<{ order: Order; onClose: () => void }> = ({
   return (
     <div
       id="receipt-modal-backdrop"
-      className="fixed inset-0 z-50 bg-zinc-950/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+      className="fixed inset-0 z-[70] bg-zinc-950/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
     >
       <div
         id="receipt-modal-card"
-        className="w-full max-w-md my-auto flex flex-col max-h-[94vh] bg-zinc-900 rounded-3xl border border-zinc-800 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+        className="w-full max-w-md my-auto flex flex-col max-h-[96vh] sm:max-h-[92vh] bg-zinc-900 rounded-2xl sm:rounded-3xl border border-zinc-800 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
       >
         {/* Top Control Bar */}
-        <div className="bg-zinc-900/90 px-5 py-3 border-b border-zinc-800 flex items-center justify-between shrink-0">
+        <div className="bg-zinc-900/90 px-4 sm:px-5 py-3 border-b border-zinc-800 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <div>
@@ -116,8 +119,8 @@ export const ReceiptModal: React.FC<{ order: Order; onClose: () => void }> = ({
         </div>
 
         {/* Scrollable Printer Stage */}
-        <div className="p-4 sm:p-5 overflow-y-auto flex-1 flex flex-col items-center bg-radial from-zinc-900 via-zinc-950 to-black">
-          <ReceiptPrinter.Root stage={stage} feedMotion="stepped" className="w-full">
+        <div className="p-3 sm:p-5 overflow-y-auto flex-1 flex flex-col items-center bg-radial from-zinc-900 via-zinc-950 to-black">
+          <ReceiptPrinter.Root stage={stage} feedMotion="stepped" forceMotion={true} className="w-full">
             {/* The Hardware Machine */}
             <ReceiptPrinter.Machine className="w-full">
               <ReceiptPrinter.Header>

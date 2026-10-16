@@ -106,6 +106,11 @@ const MainAppLayout: React.FC = () => {
       )}
 
       {/* Modals & Mobile Sheets */}
+      <EndShiftModal />
+      <MobileCartDrawer />
+      <ManualPaymentModal />
+
+      {/* Outermost Modal Layer - Thermal Receipt Printer */}
       {lastOrderReceipt && (
         <ReceiptModal
           order={lastOrderReceipt}
@@ -119,10 +124,6 @@ const MainAppLayout: React.FC = () => {
           onClose={() => setSelectedOrderForModal(null)}
         />
       )}
-
-      <EndShiftModal />
-      <MobileCartDrawer />
-      <ManualPaymentModal />
     </div>
   );
 };

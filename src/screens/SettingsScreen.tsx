@@ -351,7 +351,7 @@ export const SettingsScreen: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             <div>
               <label className="block text-xs font-semibold text-zinc-700 mb-1">
-                Thermal Receipt Header Text
+                Receipt Header Text
               </label>
               <textarea
                 rows={2}

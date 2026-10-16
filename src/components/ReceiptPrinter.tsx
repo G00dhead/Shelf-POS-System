@@ -95,7 +95,7 @@ const printingKeyframeTimes = [
 
 const statusLabels: Record<ReceiptPrinterStage, ReactNode> = {
   processing: 'Processing transaction...',
-  printing: 'Printing thermal receipt...',
+  printing: 'Printing receipt...',
   complete: 'Receipt printed successfully',
 };
 
@@ -108,7 +108,7 @@ function useReceiptPrinter(component: string) {
 }
 
 function ReceiptPrinterRoot({
-  'aria-label': ariaLabel = 'Thermal Receipt Printer',
+  'aria-label': ariaLabel = 'Receipt Printer',
   animate = true,
   children,
   className = '',

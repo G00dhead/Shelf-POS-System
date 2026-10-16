@@ -121,7 +121,7 @@ export const OrderQueueScreen: React.FC = () => {
         <div>
           <h2 className="text-lg font-bold text-zinc-900 tracking-tight">Supermarket Order Queue</h2>
           <p className="text-xs text-zinc-400 mt-0.5">
-            Monitor, resume held checkout tickets, and process customer thermal receipts or returns
+            Monitor, resume held checkout tickets, and process customer receipts or returns
           </p>
         </div>
 
@@ -326,8 +326,8 @@ export const OrderQueueScreen: React.FC = () => {
                       <button
                         onClick={() => setSelectedOrderForModal(order)}
                         className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg border border-zinc-200 transition-colors cursor-pointer"
-                        title="View Full Thermal Receipt"
-                        aria-label="View Full Thermal Receipt"
+                        title="View Full Receipt"
+                        aria-label="View Full Receipt"
                       >
                         <Eye className="w-4 h-4" />
                       </button>
